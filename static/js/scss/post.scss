@@ -1,0 +1,17 @@
+@import "base/base";
+@import "base/mixins";
+@import "base/keyframes";
+@import "base/variables";
+@import "global/global";
+
+//page components
+@import "blocks/common/header";
+@import "blocks/common/page-header";
+@import "blocks/sidebar";
+@import "pages/post/post";
+@import "pages/post/footer";
+@import "pages/post/reply";
+@import "pages/post/comments";
+@import "blocks/consultation";
+@import "blocks/common/footer";
+@import "blocks/common/modal";

@@ -1,0 +1,52 @@
+/* Styling untuk tombol dengan gradien */
+.btn--gradient {
+    background: linear-gradient(111.41deg, #ff0844 24.85%, #ff8b67 95.39%); /* Efek gradien */
+    position: relative;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    -webkit-box-shadow: 0 2px 4px rgba(43, 53, 67, 0);
+    box-shadow: 0 2px 4px rgba(43, 53, 67, 0);
+    color: white; /* Warna teks */
+    font-weight: bold; /* Menebalkan teks */
+    padding: 10px 20px; /* Padding tombol */
+    border-radius: 50px; /* Membuat tombol berbentuk bulat */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    display: inline-block; /* Menjadikan tombol inline-block */
+    cursor: pointer; /* Mengubah kursor saat hover */
+    transition: background-color 0.3s, color 0.3s; /* Transisi warna latar belakang dan teks */
+  }
+  
+  /* Tambahkan lapisan pseudo-element untuk efek hover */
+  .btn--gradient::after {
+    content: ''; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Transparansi gelap untuk menjaga kontras */
+    border-radius: 50px;
+    opacity: 0; /* Mulai dengan transparan */
+    transition: opacity 0.3s ease-in-out; /* Transisi opacity */
+  }
+  
+  /* Efek hover untuk tombol gradien */
+  .btn--gradient:hover {
+    background: linear-gradient(111.41deg, #ff8b67 24.85%, #ff0844 95.39%); /* Efek gradien saat hover */
+    transform: scale(1.1); /* Efek pembesaran saat hover */
+  }
+  
+  .btn--gradient:hover::after {
+    opacity: 1; /* Lapisan gelap menjadi terlihat saat hover */
+  }
+  
+  /* Menghilangkan outline pada fokus */
+  .btn--gradient:focus {
+    outline: none; /* Menghilangkan outline saat tombol difokuskan */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Efek bayangan pada fokus */
+  }
+  

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Dataset | RetinaScope</title>
+        <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async=""></script>
+        <script src="https://www.youtube.com/player_api"></script>
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+        <!-- Preload CSS -->
+        <link rel="stylesheet" as="style" href="{{ url_for('static', filename='css/preload.min.css') }}" />
+        <link rel="stylesheet" as="style" href="{{ url_for('static', filename='css/icomoon.css') }}" />
+        <link rel="stylesheet" as="style" href="{{ url_for('static', filename='css/libs.min.css') }}" />
+        
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/preload.min.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/libs.min.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/hero.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/doc.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/simple-lightbox.css') }}" />
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon" />
+        
+        <!-- Owl Carousel -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+        
+        <!-- Icons -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/icofont/icofont.min.css') }}">
+        
+        <!-- Slick Slider CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/slick-carousel/slick/slick.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/slick-carousel/slick/slick-theme.css') }}">
+        
+        <!-- Tailwind CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='dist/output.css') }}" />
+        
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header class="header" data-page="index">
+            <div class="container d-flex flex-wrap justify-content-between align-items-center">
+                <div class="logo header_logo">
+                    <a class="d-inline-flex align-items-center" href="{{ url_for('index') }}">
+                        <span class="logo_picture">
+                            <img src="{{ url_for('static', filename='svg/logo-retina.svg') }}" alt="RetinaScope" />
+                        </span>
+                    </a>
+                </div>
+                <button
+                    class="header_trigger"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#headerMenu"
+                    aria-controls="headerMenu"
+                >
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+                <nav class="header_nav collapse" id="headerMenu">
+                    <ul class="header_nav-list">
+                        <li class="header_nav-list_item">
+                            <a class="nav-item" href="{{ url_for('index') }}" data-page="visualization">Home</a>
+                        </li>                       
+                        <li class="header_nav-list_item">
+                            <a class="nav-item current" href="{{ url_for('documentation') }}" data-page="documentation">Documentation</a>
+                        </li>
+                        <li class="header_nav-list_item">
+                            <a class="nav-item" href="{{ url_for('visualization') }}" data-page="visualization">Visualization</a>
+                        </li>
+                        <ul class="header_nav-list">
+                            <li class="header_nav-list_item">
+                                <a href="{{ url_for('upload') }}" class="btn--gradient">Get Started</a>
+                            </li>                        
+                        </ul>
+                    </ul>
+                    <ul class="promobar_socials d-flex align-items-center justify-content-center">
+                        <li class="promobar_socials-item">
+                            <a class="link" href="#" target="_blank" rel="noopener noreferrer">
+                                <i class="icon-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="promobar_socials-item">
+                            <a class="link" href="#" target="_blank" rel="noopener noreferrer">
+                                <i class="icon-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="promobar_socials-item">
+                            <a class="link" href="#" target="_blank" rel="noopener noreferrer">
+                                <i class="icon-course"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+                
+        <!-- documentation content start -->
+        <main class="container">
+            <!-- <div class="docs-content"> -->
+              <div class="container">
+                  <article class="docs-article" id="section-1">
+                      <header class="docs-header">
+                          <h5 class="section-heading">Documentation Dataset</h5>
+                          <section class="docs-intro">
+                              <p>The Diabetic Retinopathy Severity Prediction application uses a dataset consisting of fundus images from patients diagnosed with diabetes. Each image is labeled to indicate the severity level of diabetic retinopathy. The prediction model aims to assist in identifying and classifying the severity of diabetic retinopathy based on the available images.</p>
+                          </section><!--//docs-intro-->
+
+                      <section class="docs-section" id="item-1-2">
+                          <h2 class="section-heading">Dataset Overview</h2>
+                          <p>The dataset consists of fundus images taken from diabetic patients. These images are analyzed to detect symptoms of diabetic retinopathy, which causes damage to the retina and can lead to blindness if not treated. The dataset is used to train a machine learning model to classify the severity of diabetic retinopathy.</p>
+                          <p>The dataset used in this application consists of fundus images taken from diabetic patients. These images are analyzed to detect signs of diabetic retinopathy, a condition that causes damage to the retina and can lead to blindness if not properly treated. The severity of diabetic retinopathy is classified into different levels, which are represented as labels in the dataset.</p>
+                          <p>The dataset is available for download and use through the link below. Clicking the link will open the dataset page in a lightbox for a more interactive view:</p>
+                          <h5 class="mt-5">Dataset Source:</h5>
+                          <p><i class="fas fa-external-link-alt"></i> <a class="theme-link" href="https://github.com/andreknieriem/simplelightbox" target="_blank">Click here to access the Diabetic Retinopathy Dataset</a>.</p>
+                          
+                          <div class="simplelightbox-gallery row mb-3">
+                              <div class="col-12 col-md-4 mb-3">
+                                  <a href="{{ url_for('static', filename='img/ss-kaggle.png') }}"><img class="figure-img img-fluid shadow rounded" src="assets/images/coderpro-home-thumb.png" alt="" title="CoderPro Home Page"/></a>
+                              </div>
+                          </div><!--//lightbox-gallery-->
+                      </section><!--//section-->
+
+                      <section class="docs-section" id="item-1-3">
+                        <h2 class="section-heading">Data Fields</h2>
+                        <p>
+                            Each entry in the dataset consists of two main components: the fundus image and a label indicating the severity of diabetic retinopathy. Here is a description of the dataset attributes:
+                        </p>
+                        
+                        <!-- Table for dataset attributes -->
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Image</strong></td>
+                                    <td>The fundus image taken from a diabetic patient.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Level</strong></td>
+                                    <td>A label indicating the severity of diabetic retinopathy:</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <!-- Severity Levels List -->
+                        <h5>Severity Levels:</h5>
+                        <ul>
+                            <li><strong>0:</strong> <span class="severity-0">No retinopathy (No DR)</span></li>
+                            <li><strong>1:</strong> <span class="severity-1">Mild diabetic retinopathy (Mild DR)</span></li>
+                            <li><strong>2:</strong> <span class="severity-2">Moderate diabetic retinopathy (Moderate DR)</span></li>
+                            <li><strong>3:</strong> <span class="severity-3">Severe diabetic retinopathy (Severe DR)</span></li>
+                            <li><strong>4:</strong> <span class="severity-4">Proliferative diabetic retinopathy (Proliferative DR)</span></li>
+                        </ul>
+
+                        <!-- Dataset Entries Section -->
+                        <h5>Dataset Entries:</h5>
+                        {% if data %}
+                            <div class="table-responsive" style="max-height: 300px; overflow-y: scroll;">
+                                <table class="table table-bordered mt-2">
+                                    <thead>
+                                        <tr>
+                                            <th style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">#</th>
+                                            <th style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">Image Filename</th>
+                                            <th style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">Level</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for row in data %}
+                                            <tr>
+                                                <td>{{ loop.index }}</td> <!-- This will display the row number -->
+                                                <td>{{ row['image'] }}</td>
+                                                <td>{{ row['level'] }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        {% else %}
+                            <p>No data available to display.</p>
+                        {% endif %}
+                    </section><!--//section-->
+
+                    <!-- Data Split Section -->
+                    <section class="docs-section" id="item-1-3">
+                        <h2 class="section-heading">Data Split Explanation</h2>
+                        <p>
+                            The dataset is typically divided into three main parts for training a machine learning model: the Training Set, the Validation Set, and the Test Set. Each of these sets serves a distinct purpose during model training and evaluation.
+                        </p>
+                        <h3>Training Set:</h3>
+                        <ul>
+                            <li>The <strong>training set</strong> is used to train the machine learning model. The model learns patterns, weights, and parameters from this data.</li>
+                            <li>Typically, <strong>70%</strong> of the total dataset is used as the training set, as it provides enough data for the model to learn without overfitting or underfitting.</li>
+                        </ul>
+                        <p>In the given code:</p>
+                        <div class="docs-code-block">
+                            <pre class="shadow-lg rounded"><code class="json hljs">train_intermediate, val = train_test_split(df, test_size=0.15, stratify=df['type'])</code></pre>
+                        </div>
+                        <ul>
+                            <li><strong>85%</strong> of the data from the original dataset (df) is assigned to <code>train_intermediate</code>.</li>
+                            <li>The remaining <strong>15%</strong> goes to the validation set.</li>
+                        </ul>
+                        <h3>Validation Set:</h3>
+                        <ul>
+                            <li>The <strong>validation set</strong> is used to evaluate the model during the training process. It helps in tuning hyperparameters, choosing the best model, and preventing overfitting.</li>
+                            <li>The <strong>15%</strong> portion of the data from the original dataset is dedicated to this set.</li>
+                        </ul>
+                        <p>In the code:</p>
+                        <div class="docs-code-block">
+                            <pre class="shadow-lg rounded"><code class="json hljs">train_intermediate, val = train_test_split(df, test_size=0.15, stratify=df['type'])</code></pre>
+                        </div>
+                        <ul>
+                            <li>The validation set is randomly sampled from the dataset while preserving the distribution of the target variable (<code>type</code>).</li>
+                            <li>This split ensures that the validation set reflects the class distribution of the full dataset.</li>
+                        </ul>
+                    
+                        <h3>Test Set:</h3>
+                        <ul>
+                            <li>The <strong>test set</strong> is used to evaluate the final model after training. It is important that the test set is not used during training or hyperparameter tuning, as it should only provide an unbiased evaluation of the model’s performance.</li>
+                            <li>The <strong>15%</strong> of the original dataset is set aside as the test set.</li>
+                        </ul>
+                        <p>The code for splitting the training and test data is as follows:</p>
+                        <div class="docs-code-block">
+                            <pre class="shadow-lg rounded"><code class="json hljs">train, test = train_test_split(train_intermediate, test_size=0.15 / (1 - 0.15), stratify=train_intermediate['type'])</code></pre>
+                        </div>
+                        <ul>
+                            <li>Here, the <code>train_intermediate</code> set (which is <strong>85%</strong> of the original data) is further split into:</li>
+                            <ul>
+                                <li><strong>70%</strong> for the training set.</li>
+                                <li><strong>15%</strong> for the test set.</li>
+                            </ul>
+                            <li>This split ensures that the final test set is <strong>15%</strong> of the original data, and that the class distribution in each of the subsets (train, validation, test) is proportional to the original dataset (<code>stratify=df['type']</code>).</li>
+                        </ul>
+                    
+                        <h3>Final Split Breakdown</h3>
+                        <ul>
+                            <li><strong>Training Set:</strong> 70% of the original dataset.</li>
+                            <li><strong>Validation Set:</strong> 15% of the original dataset.</li>
+                            <li><strong>Test Set:</strong> 15% of the original dataset.</li>
+                        </ul>
+                        
+                    </section><!--//section-->
+
+                  </article><!--//docs-article-->
+              </div><!--//container-->
+          </div><!--//docs-content-->    
+        
+          </main>
+
+        
+        <footer class="footer">
+            <div class="container">
+                <div class="footer_wrapper d-sm-flex flex-wrap flex-lg-nowrap justify-content-lg-between">
+                    <div class="footer_block col-sm-6 col-lg-auto" data-order="1">
+                        <div class="logo logo--footer">
+                            <a class="d-inline-flex align-items-center" href="{{ url_for('index') }}">
+                                <span class="logo_picture">
+                                    <img src="{{ url_for('static', filename='svg/logo-retina.svg') }}" alt="retinascope" />
+                                </span>
+                            </a>
+                        </div>
+                        <p class="footer_block-text">
+                            Learn coding with an industrial curriculum. Take certifications as well as job opportunities in various companies.
+                        </p>
+                        <ul class="footer_block-socials d-flex align-items-center">
+                            <li class="footer_block-socials_item">
+                                <a class="link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                                    <i class="icon-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="footer_block-socials_item">
+                                <a class="link" href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                                    <i class="icon-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="footer_block-socials_item">
+                                <a class="link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                                    <i class="icon-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="wrapper d-flex flex-column">
+                            <a class="link link--contacts text text--sm d-inline-flex align-items-center" href="mailto:retinascope@mail.com">
+                                <i class="icon-envelope icon"></i>
+                                retinascope@mail.com
+                            </a>
+                            <a class="link link--contacts text text--sm d-inline-flex align-items-center" href="tel:+123456789">
+                                <i class="icon-phone-solid icon"></i>
+                                +62-899-8080-222
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer_block col-sm-6 col-lg-auto" data-order="2">
+                        <h5 class="footer_block-header">Information:</h5>
+                        <ul class="footer_block-nav">
+                            <li class="footer_block-nav_item">
+                                <a class="link" href="{{ url_for('documentation') }}">Documentation This App</a>
+                            </li>
+                            <li class="footer_block-nav_item">
+                                <a class="link" href="{{ url_for('visualization') }}">Visualization</a>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div class="footer_block col-sm-6 col-lg-auto" data-order="4">
+                        <h5 class="footer_block-header">Includes Language</h5>
+                        <ul class="footer_block-instagram d-grid">
+                            <li class="footer_block-instagram_item">
+                                <a>
+                                    <picture>
+                                         <img class="lazy" data-src="{{ url_for('static', filename='img/Tech for America by Coding Dojo.png') }}" src="{{ url_for('static', filename='img/Tech for America by Coding Dojo.png') }}" alt="media" />
+                                    </picture>
+                                </a>
+                            </li>
+                            <li class="footer_block-instagram_item">
+                                <a>
+                                    <picture>
+                                        <img class="lazy" data-src="{{ url_for('static', filename='img/cpp_logo.png') }}" src="{{ url_for('static', filename='img/cpp_logo.png') }}" alt="media" />
+                                    </picture>
+                                </a>
+                            </li>
+                            <li class="footer_block-instagram_item">
+                                <a>
+                                    <picture>
+                                        <img class="lazy" data-src="{{ url_for('static', filename='img/Python.png') }}" src="{{ url_for('static', filename='img/Python.png') }}" alt="media" />
+                                    </picture>
+                                </a>
+                            </li>
+                            <li class="footer_block-instagram_item">
+                                <a>
+                                      <picture>
+                                            <img class="lazy" data-src="{{ url_for('static', filename='img/HTML Logo.png') }}" src="{{ url_for('static', filename='img/HTML Logo.png') }}" alt="media" />
+                                      </picture>
+                                </a>
+                            </li>
+                            <li class="footer_block-instagram_item">
+                                <a>
+                                    <picture>
+                                        <img class="lazy" data-src="{{ url_for('static', filename='img/CSS Logo.png') }}" src="{{ url_for('static', filename='img/CSS Logo.png') }}" alt="media" />
+                                    </picture>
+                                </a>
+                            </li>
+                            <li class="footer_block-instagram_item">
+                                <a>
+                                     <picture>
+                                          <img class="lazy" data-src="{{ url_for('static', filename='img/JavaScript Logo Download Vector.png') }}" src="{{ url_for('static', filename='img/JavaScript Logo Download Vector.png') }}" alt="media" />
+                                     </picture>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_secondary">
+                <div class="container d-flex flex-column flex-sm-row align-items-center justify-content-sm-between">
+                    <a class="footer_secondary-scroll" id="scrollToTop" href="#">
+                        <i class="icon-angle-up icon"></i>
+                    </a>
+                    <p class="footer_secondary-copyright">Copyright @ <span id="currentYear"></span> retinascope</p>
+                </div>
+            </div>
+        </footer>        
+        <!-- External Scripts -->
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <!-- Custom JS -->
+        <script defer src="assets/fontawesome/js/all.min.js"></script>
+        <script src="{{ url_for('static', filename='js/all.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/common.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+        <script src="{{ url_for('static', filename='js/docs.js') }}"></script> 
+
+        <!-- Initialize AOS -->
+        <script>
+            AOS.init();
+        </script>
+    </body>
+</html>

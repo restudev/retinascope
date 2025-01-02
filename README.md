@@ -29,4 +29,4 @@ Untuk membuat model ini dapat diakses, sebuah antarmuka web sederhana dibuat. Pe
 
 <img src="https://github.com/restudev/retinascope/blob/dd40d30d313f7a51753b6ba72762b4ca956f9a46/upload-ui.png" alt="Halaman Utama" width="200" />
 
-*Keterangan: Halaman utama antarmuka web.*
+*Keterangan: Halaman upload/predict.*

@@ -1,12 +1,12 @@
-# Diabetic Retinopathy Classification
+# Klasifikasi Retinopati Diabetik
 
-This project focuses on classifying Diabetic Retinopathy (DR) based on fundus images using an EfficientNet model. The model achieves an accuracy of **74%** for classifying DR into 5 classes.
+Proyek ini berfokus pada klasifikasi Retinopati Diabetik (DR) berdasarkan gambar fundus menggunakan model **MobileNet**. Model ini mencapai akurasi **75%** untuk mengklasifikasikan DR ke dalam 5 kelas.
 
-## Project Overview
+## Gambaran Umum Proyek
 
-Diabetic Retinopathy (DR) is a complication of diabetes that affects the eyes. It’s caused by damage to the blood vessels of the light-sensitive tissue at the back of the eye (retina). Early detection through fundus images is crucial to managing and treating this condition effectively.
+Retinopati Diabetik (DR) adalah komplikasi diabetes yang mempengaruhi mata. Hal ini disebabkan oleh kerusakan pada pembuluh darah jaringan sensitif cahaya di bagian belakang mata (retina). Deteksi dini melalui gambar fundus sangat penting untuk mengelola dan mengobati kondisi ini secara efektif.
 
-This project utilizes an EfficientNet model to classify fundus images into 5 different classes of Diabetic Retinopathy:
+Proyek ini menggunakan model **MobileNet** untuk mengklasifikasikan gambar fundus ke dalam 5 kelas Retinopati Diabetik yang berbeda:
 
 1. No DR
 2. Mild DR
@@ -14,27 +14,19 @@ This project utilizes an EfficientNet model to classify fundus images into 5 dif
 4. Severe DR
 5. Proliferative DR
 
-## Model and Accuracy
+## Model dan Akurasi
 
-The model used in this project is based on **EfficientNet**, a family of convolutional neural networks that efficiently scales up in both depth and width. It provides a balance between accuracy and computational efficiency.
+Model yang digunakan dalam proyek ini didasarkan pada **MobileNet**, sebuah arsitektur jaringan saraf konvolusional yang dirancang untuk perangkat dengan keterbatasan sumber daya, dengan memberikan efisiensi tinggi dalam hal komputasi dan ukuran model. MobileNet menggunakan teknik seperti depthwise separable convolutions untuk mengurangi kompleksitas model.
 
-- **Model**: EfficientNet
-- **Accuracy**: 74% on the test set
+- **Model**: MobileNet
+- **Akurasi**: 75% pada set pengujian
 
-## Web Interface
+## Antarmuka Web
 
-To make the model accessible, a simple web interface was created. Users can upload a fundus image, and the model will predict the stage of Diabetic Retinopathy.
+Untuk membuat model ini dapat diakses, sebuah antarmuka web sederhana dibuat. Pengguna dapat mengunggah gambar fundus, dan model akan memprediksi tahap Retinopati Diabetik.
 
-### Screenshots of the Web Interface
+### Screenshot Antarmuka Web
 
-![Home Page](https://github.com/user-attachments/assets/b54b9255-f5b6-460d-9e68-f3d4571c5d56)
+![Halaman Utama](https://github.com/restudev/retinascope/blob/d02b8e95447ac29568ede0ef79b595a7329a6fef/upload-ui.png)
 
-*Caption: The home page of the web interface.*
-
-## Contributing
-
-Feel free to contribute to this project by submitting a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+*Keterangan: Halaman utama antarmuka web.*

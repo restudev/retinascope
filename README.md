@@ -1,12 +1,12 @@
-# Klasifikasi Retinopati Diabetik
+# Klasifikasi Diabtic Retinopathy
 
-Proyek ini berfokus pada klasifikasi Retinopati Diabetik (DR) berdasarkan gambar fundus menggunakan model **MobileNet**. Model ini mencapai akurasi **75%** untuk mengklasifikasikan DR ke dalam 5 kelas berdasarkan tingkat keparahannya.
+Proyek ini berfokus pada klasifikasi Diabtic Retinopathy (DR) berdasarkan gambar fundus menggunakan model **MobileNet**. Model ini mencapai akurasi **75%** untuk mengklasifikasikan DR ke dalam 5 kelas berdasarkan tingkat keparahannya.
 
 ## Gambaran Umum Proyek
 
-Retinopati Diabetik (DR) adalah komplikasi diabetes yang mempengaruhi mata. Hal ini disebabkan oleh kerusakan pada pembuluh darah jaringan sensitif cahaya di bagian belakang mata (retina). Deteksi dini melalui gambar fundus sangat penting untuk mengelola dan mengobati kondisi ini secara efektif.
+Diabtic Retinopathy (DR) adalah komplikasi diabetes yang mempengaruhi mata. Hal ini disebabkan oleh kerusakan pada pembuluh darah jaringan sensitif cahaya di bagian belakang mata (retina). Deteksi dini melalui gambar fundus sangat penting untuk mengelola dan mengobati kondisi ini secara efektif.
 
-Proyek ini menggunakan model **MobileNet** untuk mengklasifikasikan gambar fundus ke dalam 5 kelas Retinopati Diabetik yang berbeda:
+Proyek ini menggunakan model **MobileNet** untuk mengklasifikasikan gambar fundus ke dalam 5 kelas Diabtic Retinopathy yang berbeda:
 
 1. No DR
 2. Mild DR
@@ -23,7 +23,7 @@ Model yang digunakan dalam proyek ini adalah **MobileNet**, sebuah arsitektur ja
 
 ## Antarmuka Web
 
-Antarmuka web untuk model ini dirancang sederhana dan mudah digunakan. Pengguna cukup mengunggah gambar fundus mata, lalu model akan secara otomatis memproses gambar tersebut dan memberikan prediksi tentang tingkat keparahan Retinopati Diabetik. Prosesnya cepat dan langsung, sehingga memudahkan siapa saja untuk menggunakan model ini tanpa memerlukan keahlian teknis.
+Antarmuka web untuk model ini dirancang sederhana dan mudah digunakan. Pengguna cukup mengunggah gambar fundus mata, lalu model akan secara otomatis memproses gambar tersebut dan memberikan prediksi tentang tingkat keparahan Diabtic Retinopathy. Prosesnya cepat dan langsung, sehingga memudahkan siapa saja untuk menggunakan model ini tanpa memerlukan keahlian teknis.
 
 ### Screenshot Antarmuka Web
 

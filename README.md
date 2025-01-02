@@ -16,14 +16,14 @@ Proyek ini menggunakan model **MobileNet** untuk mengklasifikasikan gambar fundu
 
 ## Model dan Akurasi
 
-Model yang digunakan dalam proyek ini didasarkan pada **MobileNet**, sebuah arsitektur jaringan saraf konvolusional yang dirancang untuk perangkat dengan keterbatasan sumber daya, dengan memberikan efisiensi tinggi dalam hal komputasi dan ukuran model. MobileNet menggunakan teknik seperti depthwise separable convolutions untuk mengurangi kompleksitas model.
+Model yang digunakan dalam proyek ini adalah **MobileNet**, sebuah arsitektur jaringan saraf yang dirancang untuk efisiensi tinggi, terutama pada perangkat dengan keterbatasan sumber daya. MobileNet menggunakan teknik canggih, seperti depthwise separable convolutions, untuk membuat model tetap ringan namun tetap akurat dalam mengolah gambar. Dengan cara ini, model dapat bekerja cepat tanpa mengorbankan kinerja.
 
 - **Model**: MobileNet
 - **Akurasi**: 75% pada set pengujian
 
 ## Antarmuka Web
 
-Untuk membuat model ini dapat diakses, sebuah antarmuka web sederhana dibuat. Pengguna dapat mengunggah gambar fundus, dan model akan memprediksi tahap Retinopati Diabetik.
+Antarmuka web untuk model ini dirancang sederhana dan mudah digunakan. Pengguna cukup mengunggah gambar fundus mata, lalu model akan secara otomatis memproses gambar tersebut dan memberikan prediksi tentang tingkat keparahan Retinopati Diabetik. Prosesnya cepat dan langsung, sehingga memudahkan siapa saja untuk menggunakan model ini tanpa memerlukan keahlian teknis.
 
 ### Screenshot Antarmuka Web
 

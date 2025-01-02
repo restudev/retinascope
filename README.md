@@ -1,6 +1,6 @@
 # Klasifikasi Retinopati Diabetik
 
-Proyek ini berfokus pada klasifikasi Retinopati Diabetik (DR) berdasarkan gambar fundus menggunakan model **MobileNet**. Model ini mencapai akurasi **75%** untuk mengklasifikasikan DR ke dalam 5 kelas.
+Proyek ini berfokus pada klasifikasi Retinopati Diabetik (DR) berdasarkan gambar fundus menggunakan model **MobileNet**. Model ini mencapai akurasi **75%** untuk mengklasifikasikan DR ke dalam 5 kelas berdasarkan tingkat keparahannya.
 
 ## Gambaran Umum Proyek
 

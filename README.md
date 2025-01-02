@@ -27,6 +27,8 @@ Untuk membuat model ini dapat diakses, sebuah antarmuka web sederhana dibuat. Pe
 
 ### Screenshot Antarmuka Web
 
-![Halaman Utama](https://github.com/restudev/retinascope/blob/d02b8e95447ac29568ede0ef79b595a7329a6fef/upload-ui.png)
+### Screenshot Antarmuka Web
+
+<img src="https://github.com/restudev/retinascope/blob/dd40d30d313f7a51753b6ba72762b4ca956f9a46/upload-ui.png" alt="Halaman Utama" width="600" />
 
 *Keterangan: Halaman utama antarmuka web.*

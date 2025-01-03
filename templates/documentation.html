@@ -118,7 +118,25 @@
                           <section class="docs-intro">
                               <p>The Diabetic Retinopathy Severity Prediction application uses a dataset consisting of fundus images from patients diagnosed with diabetes. Each image is labeled to indicate the severity level of diabetic retinopathy. The prediction model aims to assist in identifying and classifying the severity of diabetic retinopathy based on the available images.</p>
                           </section><!--//docs-intro-->
-
+<!-- Penjelasan Perbedaan Mata Normal dan DR -->
+<section class="docs-description">
+    <h5 class="mt-5">Visual Comparison: Normal vs. Diabetic Retinopathy</h5>
+    <p>The following points illustrate the differences between a healthy retina and one affected by Diabetic Retinopathy:</p>
+    <ul>
+        <li><strong>Normal Retina:</strong> Shows clear blood vessels with no signs of damage.</li>
+        <li><strong>Diabetic Retinopathy:</strong> Displays hemorrhages, aneurysms, and cotton wool spots, which indicate the severity of DR.</li>
+    </ul>
+    <p>This comparison helps users understand the various indicators the model detects, such as hemorrhages, aneurysms, and hard exudates.</p>
+    
+    <!-- Gambar Perbandingan 1 gambar -->
+    <figure>
+        <img src="{{ url_for('static', filename='img/perbandingan.png') }}" 
+             alt="Comparison of Normal Retina and Diabetic Retinopathy" 
+             class="img-fluid" 
+             style="max-width: 600px; height: auto; margin: 0 auto; display: block;">
+    </figure>
+    
+</section><!--//docs-description-->                         
                       <section class="docs-section" id="item-1-2">
                           <h2 class="section-heading">Dataset Overview</h2>
                           <p>The dataset consists of fundus images taken from diabetic patients. These images are analyzed to detect symptoms of diabetic retinopathy, which causes damage to the retina and can lead to blindness if not treated. The dataset is used to train a machine learning model to classify the severity of diabetic retinopathy.</p>
@@ -132,6 +150,13 @@
                                   <a href="{{ url_for('static', filename='img/ss-kaggle.png') }}"><img class="figure-img img-fluid shadow rounded" src="assets/images/coderpro-home-thumb.png" alt="" title="CoderPro Home Page"/></a>
                               </div>
                           </div><!--//lightbox-gallery-->
+
+                          <div class="card-header">
+                            <h4>Diabetic Retinopathy Class Distribution</h4>
+                        </div>
+                        <div class="card-body">
+                            <div id="chart-profile-visit"></div>
+                        </div>
                       </section><!--//section-->
 
                       <section class="docs-section" id="item-1-3">
@@ -386,7 +411,11 @@
         <script src="{{ url_for('static', filename='js/all.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/common.min.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
-        <script src="{{ url_for('static', filename='js/docs.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/docs.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="{{ url_for('static', filename='js/chart.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/apexchart.js') }}"></script>  
 
         <!-- Initialize AOS -->
         <script>

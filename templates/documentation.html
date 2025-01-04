@@ -87,23 +87,6 @@
                             </li>                        
                         </ul>
                     </ul>
-                    <ul class="promobar_socials d-flex align-items-center justify-content-center">
-                        <li class="promobar_socials-item">
-                            <a class="link" href="#" target="_blank" rel="noopener noreferrer">
-                                <i class="icon-facebook"></i>
-                            </a>
-                        </li>
-                        <li class="promobar_socials-item">
-                            <a class="link" href="#" target="_blank" rel="noopener noreferrer">
-                                <i class="icon-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="promobar_socials-item">
-                            <a class="link" href="#" target="_blank" rel="noopener noreferrer">
-                                <i class="icon-course"></i>
-                            </a>
-                        </li>
-                    </ul>
                 </nav>
             </div>
         </header>
@@ -115,42 +98,47 @@
                   <article class="docs-article" id="section-1">
                       <header class="docs-header">
                           <h5 class="section-heading">Documentation Dataset</h5>
-                          <section class="docs-intro">
-                              <p>The Diabetic Retinopathy Severity Prediction application uses a dataset consisting of fundus images from patients diagnosed with diabetes. Each image is labeled to indicate the severity level of diabetic retinopathy. The prediction model aims to assist in identifying and classifying the severity of diabetic retinopathy based on the available images.</p>
-                          </section><!--//docs-intro-->
-<!-- Penjelasan Perbedaan Mata Normal dan DR -->
-<section class="docs-description">
-    <h5 class="mt-5">Visual Comparison: Normal vs. Diabetic Retinopathy</h5>
-    <p>The following points illustrate the differences between a healthy retina and one affected by Diabetic Retinopathy:</p>
-    <ul>
-        <li><strong>Normal Retina:</strong> Shows clear blood vessels with no signs of damage.</li>
-        <li><strong>Diabetic Retinopathy:</strong> Displays hemorrhages, aneurysms, and cotton wool spots, which indicate the severity of DR.</li>
-    </ul>
-    <p>This comparison helps users understand the various indicators the model detects, such as hemorrhages, aneurysms, and hard exudates.</p>
-    
-    <!-- Gambar Perbandingan 1 gambar -->
-    <figure>
-        <img src="{{ url_for('static', filename='img/perbandingan.png') }}" 
-             alt="Comparison of Normal Retina and Diabetic Retinopathy" 
-             class="img-fluid" 
-             style="max-width: 600px; height: auto; margin: 0 auto; display: block;">
-    </figure>
-    
-</section><!--//docs-description-->                         
-                      <section class="docs-section" id="item-1-2">
-                          <h2 class="section-heading">Dataset Overview</h2>
-                          <p>The dataset consists of fundus images taken from diabetic patients. These images are analyzed to detect symptoms of diabetic retinopathy, which causes damage to the retina and can lead to blindness if not treated. The dataset is used to train a machine learning model to classify the severity of diabetic retinopathy.</p>
-                          <p>The dataset used in this application consists of fundus images taken from diabetic patients. These images are analyzed to detect signs of diabetic retinopathy, a condition that causes damage to the retina and can lead to blindness if not properly treated. The severity of diabetic retinopathy is classified into different levels, which are represented as labels in the dataset.</p>
-                          <p>The dataset is available for download and use through the link below. Clicking the link will open the dataset page in a lightbox for a more interactive view:</p>
-                          <h5 class="mt-5">Dataset Source:</h5>
-                          <p><i class="fas fa-external-link-alt"></i> <a class="theme-link" href="https://github.com/andreknieriem/simplelightbox" target="_blank">Click here to access the Diabetic Retinopathy Dataset</a>.</p>
-                          
-                          <div class="simplelightbox-gallery row mb-3">
-                              <div class="col-12 col-md-4 mb-3">
-                                  <a href="{{ url_for('static', filename='img/ss-kaggle.png') }}"><img class="figure-img img-fluid shadow rounded" src="assets/images/coderpro-home-thumb.png" alt="" title="CoderPro Home Page"/></a>
-                              </div>
-                          </div><!--//lightbox-gallery-->
+                            <section class="docs-intro">
+                                <p>The Diabetic Retinopathy Severity Prediction application uses a dataset consisting of fundus images from patients diagnosed with diabetes. Each image is labeled to indicate the severity level of diabetic retinopathy. The prediction model aims to assist in identifying and classifying the severity of diabetic retinopathy based on the available images.</p>
+                            </section><!--//docs-intro-->
+                            <!-- Penjelasan Perbedaan Mata Normal dan DR -->
+                            <section class="docs-description">
+                                <h5 class="mt-5">Visual Comparison: Normal vs. Diabetic Retinopathy</h5>
+                                <p>The following points illustrate the differences between a healthy retina and one affected by Diabetic Retinopathy:</p>
+                            <ul>
+                                <li><strong>Normal Retina:</strong> Shows clear blood vessels with no signs of damage.</li>
+                            <li><strong>Diabetic Retinopathy:</strong> Displays hemorrhages, aneurysms, and cotton wool spots, which indicate the severity of DR.</li>
+                            </ul>
+                                <p>This comparison helps users understand the various indicators the model detects, such as hemorrhages, aneurysms, and hard exudates.</p>
+                            <!-- Gambar Perbandingan -->
 
+                            <figure>
+                            <img src="{{ url_for('static', filename='img/perbandingan.png') }}" 
+                                alt="Comparison of Normal Retina and Diabetic Retinopathy" 
+                                class="img-fluid" 
+                                style="max-width: 600px; height: auto; margin: 0 auto; display: block;">
+                            </figure>
+                            </section>                         
+                            <section class="docs-section" id="item-1-2">
+                                <h2 class="section-heading">Dataset Overview</h2>
+                                <p>The dataset consists of fundus images taken from diabetic patients. These images are analyzed to detect symptoms of diabetic retinopathy, which causes damage to the retina and can lead to blindness if not treated. The dataset is used to train a machine learning model to classify the severity of diabetic retinopathy.</p>
+                                <p>The dataset used in this application consists of fundus images taken from diabetic patients. These images are analyzed to detect signs of diabetic retinopathy, a condition that causes damage to the retina and can lead to blindness if not properly treated. The severity of diabetic retinopathy is classified into different levels, which are represented as labels in the dataset.</p>
+                                <p>The dataset is available for download and use through the link below. Clicking the link will open the dataset page in a lightbox for a more interactive view:</p>
+                                <h5 class="mt-5">Dataset Source:</h5>
+                                <p><i class="fas fa-external-link-alt"></i> <a class="theme-link" href="https://www.kaggle.com/datasets/sovitrath/diabetic-retinopathy-224x224-gaussian-filtered" target="_blank">Click here to access the Diabetic Retinopathy Dataset</a>.</p>
+                                <div class="simplelightbox-gallery row mb-3">
+                                    <div class="col-12 col-md-10 mb-2">
+                                        <!-- Single link to the image -->
+                                        <a href="{{ url_for('static', filename='img/kaggle.png') }}">
+                                            <!-- Use inline CSS for setting width -->
+                                            <img class="figure-img img-fluid shadow rounded" 
+                                                 src="{{ url_for('static', filename='img/kaggle.png') }}" 
+                                                 alt="CoderPro Home Page" 
+                                                 title="CoderPro Home Page" 
+                                                 style="width: 500px; height: auto;"/> <!-- Set width to 300px -->
+                                        </a>
+                                    </div>
+                                </div>                                                     
                           <div class="card-header">
                             <h4>Diabetic Retinopathy Class Distribution</h4>
                         </div>
@@ -175,11 +163,11 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Image</strong></td>
+                                    <td><strong>id_code</strong></td>
                                     <td>The fundus image taken from a diabetic patient.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Level</strong></td>
+                                    <td><strong>diagnosis</strong></td>
                                     <td>A label indicating the severity of diabetic retinopathy:</td>
                                 </tr>
                             </tbody>
@@ -203,16 +191,16 @@
                                     <thead>
                                         <tr>
                                             <th style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">#</th>
-                                            <th style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">Image Filename</th>
-                                            <th style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">Level</th>
+                                            <th style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">id_code</th>
+                                            <th style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">diagnosis</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {% for row in data %}
                                             <tr>
                                                 <td>{{ loop.index }}</td> <!-- This will display the row number -->
-                                                <td>{{ row['image'] }}</td>
-                                                <td>{{ row['level'] }}</td>
+                                                <td>{{ row['id_code'] }}</td>
+                                                <td>{{ row['diagnosis'] }}</td>
                                             </tr>
                                         {% endfor %}
                                     </tbody>
@@ -227,12 +215,12 @@
                     <section class="docs-section" id="item-1-3">
                         <h2 class="section-heading">Data Split Explanation</h2>
                         <p>
-                            The dataset is typically divided into three main parts for training a machine learning model: the Training Set, the Validation Set, and the Test Set. Each of these sets serves a distinct purpose during model training and evaluation.
+                            The dataset is divided into three main parts for training a machine learning model: the <strong>Training Set</strong>, <strong>Validation Set</strong>, and <strong>Test Set</strong>. Each set serves a distinct role during the training and evaluation process.
                         </p>
+                        
                         <h3>Training Set:</h3>
                         <ul>
                             <li>The <strong>training set</strong> is used to train the machine learning model. The model learns patterns, weights, and parameters from this data.</li>
-                            <li>Typically, <strong>70%</strong> of the total dataset is used as the training set, as it provides enough data for the model to learn without overfitting or underfitting.</li>
                         </ul>
                         <p>In the given code:</p>
                         <div class="docs-code-block">
@@ -240,14 +228,15 @@
                         </div>
                         <ul>
                             <li><strong>85%</strong> of the data from the original dataset (df) is assigned to <code>train_intermediate</code>.</li>
-                            <li>The remaining <strong>15%</strong> goes to the validation set.</li>
+                            <li>The remaining <strong>15%</strong> is allocated to the validation set.</li>
                         </ul>
+                        
                         <h3>Validation Set:</h3>
                         <ul>
-                            <li>The <strong>validation set</strong> is used to evaluate the model during the training process. It helps in tuning hyperparameters, choosing the best model, and preventing overfitting.</li>
-                            <li>The <strong>15%</strong> portion of the data from the original dataset is dedicated to this set.</li>
+                            <li>The <strong>validation set</strong> is used to evaluate the model during the training process. It helps with tuning hyperparameters, selecting the best model, and preventing overfitting.</li>
+                            <li><strong>15%</strong> of the data from the original dataset is allocated to this set.</li>
                         </ul>
-                        <p>In the code:</p>
+                        <p>In the given code:</p>
                         <div class="docs-code-block">
                             <pre class="shadow-lg rounded"><code class="json hljs">train_intermediate, val = train_test_split(df, test_size=0.15, stratify=df['type'])</code></pre>
                         </div>
@@ -255,11 +244,11 @@
                             <li>The validation set is randomly sampled from the dataset while preserving the distribution of the target variable (<code>type</code>).</li>
                             <li>This split ensures that the validation set reflects the class distribution of the full dataset.</li>
                         </ul>
-                    
+                        
                         <h3>Test Set:</h3>
                         <ul>
                             <li>The <strong>test set</strong> is used to evaluate the final model after training. It is important that the test set is not used during training or hyperparameter tuning, as it should only provide an unbiased evaluation of the model’s performance.</li>
-                            <li>The <strong>15%</strong> of the original dataset is set aside as the test set.</li>
+                            <li><strong>15%</strong> of the original dataset is set aside for the test set.</li>
                         </ul>
                         <p>The code for splitting the training and test data is as follows:</p>
                         <div class="docs-code-block">
@@ -273,16 +262,14 @@
                             </ul>
                             <li>This split ensures that the final test set is <strong>15%</strong> of the original data, and that the class distribution in each of the subsets (train, validation, test) is proportional to the original dataset (<code>stratify=df['type']</code>).</li>
                         </ul>
-                    
-                        <h3>Final Split Breakdown</h3>
-                        <ul>
-                            <li><strong>Training Set:</strong> 70% of the original dataset.</li>
-                            <li><strong>Validation Set:</strong> 15% of the original dataset.</li>
-                            <li><strong>Test Set:</strong> 15% of the original dataset.</li>
-                        </ul>
-                        
-                    </section><!--//section-->
-
+                        <div class="card-profile">
+                            <div class="card-header">
+                                <h4>Final Split Breakdown</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="chart-data-split"></div>
+                            </div>
+                        </div>
                   </article><!--//docs-article-->
               </div><!--//container-->
           </div><!--//docs-content-->    
@@ -302,25 +289,8 @@
                             </a>
                         </div>
                         <p class="footer_block-text">
-                            Learn coding with an industrial curriculum. Take certifications as well as job opportunities in various companies.
+                            Discover an advanced AI solution for detecting Diabetic Retinopathy (DR) from retinal fundus images. Our system provides accurate predictions, enabling timely treatment and prevention of vision loss.
                         </p>
-                        <ul class="footer_block-socials d-flex align-items-center">
-                            <li class="footer_block-socials_item">
-                                <a class="link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                                    <i class="icon-facebook"></i>
-                                </a>
-                            </li>
-                            <li class="footer_block-socials_item">
-                                <a class="link" href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                                    <i class="icon-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="footer_block-socials_item">
-                                <a class="link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                                    <i class="icon-instagram"></i>
-                                </a>
-                            </li>
-                        </ul>
                         <div class="wrapper d-flex flex-column">
                             <a class="link link--contacts text text--sm d-inline-flex align-items-center" href="mailto:retinascope@mail.com">
                                 <i class="icon-envelope icon"></i>
@@ -336,7 +306,7 @@
                         <h5 class="footer_block-header">Information:</h5>
                         <ul class="footer_block-nav">
                             <li class="footer_block-nav_item">
-                                <a class="link" href="{{ url_for('documentation') }}">Documentation This App</a>
+                                <a class="link" href="{{ url_for('documentation') }}">Documentation of The Dataset</a>
                             </li>
                             <li class="footer_block-nav_item">
                                 <a class="link" href="{{ url_for('visualization') }}">Visualization</a>
@@ -345,19 +315,19 @@
                     </div>
         
                     <div class="footer_block col-sm-6 col-lg-auto" data-order="4">
-                        <h5 class="footer_block-header">Includes Language</h5>
+                        <h5 class="footer_block-header">Build with</h5>
                         <ul class="footer_block-instagram d-grid">
                             <li class="footer_block-instagram_item">
                                 <a>
                                     <picture>
-                                         <img class="lazy" data-src="{{ url_for('static', filename='img/Tech for America by Coding Dojo.png') }}" src="{{ url_for('static', filename='img/Tech for America by Coding Dojo.png') }}" alt="media" />
+                                         <img class="lazy" data-src="{{ url_for('static', filename='img/flask.png') }}" src="{{ url_for('static', filename='img/flask.png') }}" alt="media" />
                                     </picture>
                                 </a>
                             </li>
                             <li class="footer_block-instagram_item">
                                 <a>
                                     <picture>
-                                        <img class="lazy" data-src="{{ url_for('static', filename='img/cpp_logo.png') }}" src="{{ url_for('static', filename='img/cpp_logo.png') }}" alt="media" />
+                                        <img class="lazy" data-src="{{ url_for('static', filename='img/jupyter.png') }}" src="{{ url_for('static', filename='img/jupyter.png') }}" alt="media" />
                                     </picture>
                                 </a>
                             </li>
@@ -401,7 +371,7 @@
                     <p class="footer_secondary-copyright">Copyright @ <span id="currentYear"></span> retinascope</p>
                 </div>
             </div>
-        </footer>        
+        </footer>      
         <!-- External Scripts -->
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -416,6 +386,16 @@
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         <script src="{{ url_for('static', filename='js/chart.js') }}"></script> 
         <script src="{{ url_for('static', filename='js/apexchart.js') }}"></script>  
+    <!-- Include Bootstrap JS (optional for interactive components like modals) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Include SimpleLightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.1.3/simple-lightbox.min.js"></script>
+    
+    <script>
+        // Initialize SimpleLightbox
+        var lightbox = new SimpleLightbox('.simplelightbox-gallery a');
+    </script>
 
         <!-- Initialize AOS -->
         <script>

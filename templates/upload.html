@@ -76,23 +76,6 @@
               <a href="{{ url_for('upload') }}" class="btn--gradient">Get Started</a>
             </li>
           </ul>
-          <ul class="promobar_socials d-flex align-items-center justify-content-center">
-            <li class="promobar_socials-item">
-              <a class="link" href="#" target="_blank" rel="noopener noreferrer">
-                <i class="icon-facebook"></i>
-              </a>
-            </li>
-            <li class="promobar_socials-item">
-              <a class="link" href="#" target="_blank" rel="noopener noreferrer">
-                <i class="icon-twitter"></i>
-              </a>
-            </li>
-            <li class="promobar_socials-item">
-              <a class="link" href="#" target="_blank" rel="noopener noreferrer">
-                <i class="icon-course"></i>
-              </a>
-            </li>
-          </ul>
         </nav>
       </div>
     </header>
@@ -457,135 +440,113 @@
       });
     </script>
     <!-- upload section end -->
-
     <footer class="footer">
       <div class="container">
-        <div class="footer_wrapper d-sm-flex flex-wrap flex-lg-nowrap justify-content-lg-between">
-          
-          <!-- Footer Block 1: Logo and Contact Information -->
-          <div class="footer_block col-sm-6 col-lg-auto" data-order="1">
-            <div class="logo logo--footer">
-              <a class="d-inline-flex align-items-center" href="{{ url_for('index') }}">
-                <span class="logo_picture">
-                  <img src="{{ url_for('static', filename='svg/logo-retina.svg') }}" alt="retinascope" />
-                </span>
-              </a>
-            </div>
-            <p class="footer_block-text">
-              Discover an advanced AI solution for detecting Diabetic Retinopathy (DR) from retinal fundus images. Our system provides accurate predictions, enabling timely treatment and prevention of vision loss.
-            </p>
-            <ul class="footer_block-socials d-flex align-items-center">
-              <li class="footer_block-socials_item">
-                <a class="link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                  <i class="icon-facebook"></i>
-                </a>
-              </li>
-              <li class="footer_block-socials_item">
-                <a class="link" href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                  <i class="icon-twitter"></i>
-                </a>
-              </li>
-              <li class="footer_block-socials_item">
-                <a class="link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                  <i class="icon-instagram"></i>
-                </a>
-              </li>
-            </ul>
-            <div class="wrapper d-flex flex-column">
-              <a class="link link--contacts text text--sm d-inline-flex align-items-center" href="mailto:retinascope@mail.com">
-                <i class="icon-envelope icon"></i>
-                retinascope@mail.com
-              </a>
-              <a class="link link--contacts text text--sm d-inline-flex align-items-center" href="tel:+123456789">
-                <i class="icon-phone-solid icon"></i>
-                +62-899-8080-222
-              </a>
-            </div>
+          <div class="footer_wrapper d-sm-flex flex-wrap flex-lg-nowrap justify-content-lg-between">
+              <!-- Footer Block: Logo and Contact Info -->
+              <div class="footer_block col-sm-6 col-lg-auto" data-order="1">
+                  <div class="logo logo--footer">
+                      <a class="d-inline-flex align-items-center" href="{{ url_for('index') }}">
+                          <span class="logo_picture">
+                              <img src="{{ url_for('static', filename='svg/logo-retina.svg') }}" alt="retinascope" />
+                          </span>
+                      </a>
+                  </div>
+                  <p class="footer_block-text">
+                      Discover an advanced AI solution for detecting Diabetic Retinopathy (DR) from retinal fundus images. Our system provides accurate predictions, enabling timely treatment and prevention of vision loss.
+                  </p>
+                  <div class="wrapper d-flex flex-column" style="margin-top: 20px;">
+                      <a class="link link--contacts text text--sm d-inline-flex align-items-center" href="mailto:retinascope@mail.com" style="margin-bottom: 10px;">
+                          <i class="icon-envelope icon" style="margin-right: 8px;"></i>
+                          retinascope@mail.com
+                      </a>
+                      <a class="link link--contacts text text--sm d-inline-flex align-items-center" href="tel:+123456789">
+                          <i class="icon-phone-solid icon" style="margin-right: 8px;"></i>
+                          +62-899-8080-222
+                      </a>
+                  </div>
+              </div>
+  
+              <!-- Footer Block: Information -->
+              <div class="footer_block col-sm-6 col-lg-auto" data-order="2">
+                  <h5 class="footer_block-header">Information:</h5>
+                  <ul class="footer_block-nav">
+                      <li class="footer_block-nav_item">
+                          <a class="link" href="{{ url_for('documentation') }}">Documentation This App</a>
+                      </li>
+                      <li class="footer_block-nav_item">
+                          <a class="link" href="{{ url_for('visualization') }}">Visualization</a>
+                      </li>
+                  </ul>
+              </div>
+  
+              <!-- Footer Block: Technologies Used -->
+              <div class="footer_block col-sm-6 col-lg-auto" data-order="4">
+                  <h5 class="footer_block-header">Includes Language</h5>
+                  <ul class="footer_block-instagram d-grid">
+                      <li class="footer_block-instagram_item">
+                          <a>
+                              <picture>
+                                  <img class="lazy" data-src="{{ url_for('static', filename='img/flask.png') }}" src="{{ url_for('static', filename='img/flask.png') }}" alt="media" />
+                              </picture>
+                          </a>
+                      </li>
+                      <li class="footer_block-instagram_item">
+                          <a>
+                              <picture>
+                                  <img class="lazy" data-src="{{ url_for('static', filename='img/jupyter.png') }}" src="{{ url_for('static', filename='img/jupyter.png') }}" alt="media" />
+                              </picture>
+                          </a>
+                      </li>
+                      <li class="footer_block-instagram_item">
+                          <a>
+                              <picture>
+                                  <img class="lazy" data-src="{{ url_for('static', filename='img/Python.png') }}" src="{{ url_for('static', filename='img/Python.png') }}" alt="media" />
+                              </picture>
+                          </a>
+                      </li>
+                      <li class="footer_block-instagram_item">
+                          <a>
+                              <picture>
+                                  <img class="lazy" data-src="{{ url_for('static', filename='img/HTML Logo.png') }}" src="{{ url_for('static', filename='img/HTML Logo.png') }}" alt="media" />
+                              </picture>
+                          </a>
+                      </li>
+                      <li class="footer_block-instagram_item">
+                          <a>
+                              <picture>
+                                  <img class="lazy" data-src="{{ url_for('static', filename='img/CSS Logo.png') }}" src="{{ url_for('static', filename='img/CSS Logo.png') }}" alt="media" />
+                              </picture>
+                          </a>
+                      </li>
+                      <li class="footer_block-instagram_item">
+                          <a>
+                              <picture>
+                                  <img class="lazy" data-src="{{ url_for('static', filename='img/JavaScript Logo Download Vector.png') }}" src="{{ url_for('static', filename='img/JavaScript Logo Download Vector.png') }}" alt="media" />
+                              </picture>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
           </div>
-    
-          <!-- Footer Block 2: Information Links -->
-          <div class="footer_block col-sm-6 col-lg-auto" data-order="2">
-            <h5 class="footer_block-header">Information:</h5>
-            <ul class="footer_block-nav">
-              <li class="footer_block-nav_item">
-                <a class="link" href="{{ url_for('documentation') }}">Documentation This App</a>
-              </li>
-              <li class="footer_block-nav_item">
-                <a class="link" href="{{ url_for('visualization') }}">Visualization</a>
-              </li>
-            </ul>
-          </div>
-    
-          <!-- Footer Block 3: Includes Language and Technologies -->
-          <div class="footer_block col-sm-6 col-lg-auto" data-order="4">
-            <h5 class="footer_block-header">Includes Language</h5>
-            <ul class="footer_block-instagram d-grid">
-              <li class="footer_block-instagram_item">
-                <a>
-                  <picture>
-                    <img class="lazy" data-src="{{ url_for('static', filename='img/Tech for America by Coding Dojo.png') }}" src="{{ url_for('static', filename='img/Tech for America by Coding Dojo.png') }}" alt="media" />
-                  </picture>
-                </a>
-              </li>
-              <li class="footer_block-instagram_item">
-                <a>
-                  <picture>
-                    <img class="lazy" data-src="{{ url_for('static', filename='img/cpp_logo.png') }}" src="{{ url_for('static', filename='img/cpp_logo.png') }}" alt="media" />
-                  </picture>
-                </a>
-              </li>
-              <li class="footer_block-instagram_item">
-                <a>
-                  <picture>
-                    <img class="lazy" data-src="{{ url_for('static', filename='img/Python.png') }}" src="{{ url_for('static', filename='img/Python.png') }}" alt="media" />
-                  </picture>
-                </a>
-              </li>
-              <li class="footer_block-instagram_item">
-                <a>
-                  <picture>
-                    <img class="lazy" data-src="{{ url_for('static', filename='img/HTML Logo.png') }}" src="{{ url_for('static', filename='img/HTML Logo.png') }}" alt="media" />
-                  </picture>
-                </a>
-              </li>
-              <li class="footer_block-instagram_item">
-                <a>
-                  <picture>
-                    <img class="lazy" data-src="{{ url_for('static', filename='img/CSS Logo.png') }}" src="{{ url_for('static', filename='img/CSS Logo.png') }}" alt="media" />
-                  </picture>
-                </a>
-              </li>
-              <li class="footer_block-instagram_item">
-                <a>
-                  <picture>
-                    <img class="lazy" data-src="{{ url_for('static', filename='img/JavaScript Logo Download Vector.png') }}" src="{{ url_for('static', filename='img/JavaScript Logo Download Vector.png') }}" alt="media" />
-                  </picture>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
-    
-      <!-- Footer Secondary: Scroll to Top and Copyright -->
+  
+      <!-- Footer Secondary Section: Scroll to Top and Copyright -->
       <div class="footer_secondary">
-        <div class="container d-flex flex-column flex-sm-row align-items-center justify-content-sm-between">
-          <a class="footer_secondary-scroll" id="scrollToTop" href="#">
-            <i class="icon-angle-up icon"></i>
-          </a>
-          <p class="footer_secondary-copyright">
-            Copyright @ <span id="currentYear"></span> retinascope
-          </p>
-        </div>
+          <div class="container d-flex flex-column flex-sm-row align-items-center justify-content-sm-between">
+              <a class="footer_secondary-scroll" id="scrollToTop" href="#">
+                  <i class="icon-angle-up icon"></i>
+              </a>
+              <p class="footer_secondary-copyright">Copyright @ <span id="currentYear"></span> retinascope</p>
+          </div>
       </div>
-    </footer>
-    
+  </footer> 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="js/common.min.js"></script>
-    <script src="js/reviews.min.js"></script>
-    <script src="js/courses.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/reviews.js"></script>
+    <script src="js/courses.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async=""></script>
     <script src="https://www.youtube.com/player_api"></script>
 </body>

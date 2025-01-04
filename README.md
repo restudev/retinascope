@@ -33,5 +33,5 @@ Antarmuka pengguna aplikasi **Retinascope** dirancang sederhana dan mudah diguna
 
 ### Screenshot Antarmuka Web
 
-![Halaman Upload](https://github.com/restudev/retinascope/blob/566438595976da50f1becb5095d536a21746b22a/static/img/upload-ui.png){:width="400px"}
+![Halaman Upload](https://github.com/restudev/retinascope/blob/566438595976da50f1becb5095d536a21746b22a/static/img/upload-ui.png){:width="200px"}
 

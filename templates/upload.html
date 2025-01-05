@@ -97,8 +97,8 @@
     </header>
   
     <!-- Upload section start -->
-    <main>
-      <div class="container">
+    <main class="container">
+      <div class="container-image mx-auto p-4">
         <form method="POST" action="{{ url_for('upload_file') }}" enctype="multipart/form-data" id="form">
           <input type="hidden" name="_token" value="{{ csrf_token() }}" />
           <div class="bg-white shadow-md rounded-lg p-6">
@@ -106,7 +106,7 @@
             <p class="text-gray-600 mb-4">
               Drag and drop your images here or click to browse. Maximum 1 image, each up to 10 MB.
             </p>
-  
+    
             <!-- Drag-and-drop area -->
             <div id="dropzone" class="border-2 border-dashed border-gray-300 rounded-lg p-6 mb-4 flex flex-col items-center justify-center">
               <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2"></i>
@@ -115,7 +115,7 @@
               </p>
               <input type="file" id="fileInput" name="images[]" accept=".jpg,.jpeg,.png,.svg" class="hidden"/>
             </div>
-  
+    
             <!-- Reference images -->
             <h3 class="text-lg font-semibold mb-2">Or click from reference images:</h3>
             <div id="reference-images" class="flex flex-wrap gap-2 mb-4">
@@ -128,20 +128,20 @@
               <div class="reference-image relative w-20 h-20 cursor-pointer" data-image-url="{{ url_for('static', filename='img/image_moderate.png') }}">
                 <img src="{{ url_for('static', filename='img/image_moderate.png') }}" alt="Ref3" class="object-cover rounded-lg w-full h-full"/>
               </div>
-              <div class="reference-image relative w-20 h-20 cursor-pointer" data-image-url="{{ url_for('static', filename='img/image_proliferate.png') }}">
-                <img src="{{ url_for('static', filename='img/image_proliferate.png') }}" alt="Ref4" class="object-cover rounded-lg w-full h-full"/>
-              </div>
               <div class="reference-image relative w-20 h-20 cursor-pointer" data-image-url="{{ url_for('static', filename='img/image_severe.png') }}">
                 <img src="{{ url_for('static', filename='img/image_severe.png') }}" alt="Ref5" class="object-cover rounded-lg w-full h-full"/>
               </div>
+              <div class="reference-image relative w-20 h-20 cursor-pointer" data-image-url="{{ url_for('static', filename='img/image_proliferate.png') }}">
+                <img src="{{ url_for('static', filename='img/image_proliferate.png') }}" alt="Ref4" class="object-cover rounded-lg w-full h-full"/>
+              </div>
             </div>
-  
+    
             <!-- Preview area -->
             <p id="preview-text" class="text-gray-400 mb-4" style="display: none">
               Preview your selected images:
             </p>
             <div id="image-preview" class="flex flex-wrap gap-2 mb-4"></div>
-  
+    
             <div class="flex justify-end mt-4 p-2">
               <!-- Cancel Button -->
               <button type="button" id="cancelButton" class="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg mr-2 hover:bg-gray-300 focus:ring-2 focus:ring-gray-400 focus:outline-none" aria-label="Cancel and reset the form">Cancel</button>
@@ -152,32 +152,55 @@
             </div>
           </div>
         </form>
-  
-        <!-- Prediction Results -->
-<div id="result" class="bg-white shadow-md rounded-lg p-6 mt-6 hidden relative">
-  <h3 class="text-xl font-semibold p-4">Prediction Results:</h3>
-  <!-- Close Button -->
-  <button id="close-btn" class="text-red-500 font-bold absolute top-4 right-4 text-xl">×</button>
-  <div class="flex flex-col items-center">
-    <img id="result-image" src="" alt="Result Image" class="object-cover rounded-lg mb-4" style="max-width: 300px; max-height: 300px" />
-    <p id="class-name" class="text-lg font-semibold">Class: <span>Loading...</span></p>
-    <div class="mb-4">
-      <h4 class="text-lg font-semibold">Prediction Accuracy:</h4>
-      <div class="relative pt-1">
-        <div class="flex mb-2 items-center justify-between">
-          <span id="accuracy-percentage" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600 bg-teal-200">0%</span>
-        </div>
-        <div class="w-full bg-teal-200 rounded-full">
-          <div id="accuracy-bar" class="bg-teal-500 text-xs leading-none py-1 text-center text-white rounded-full" style="width: 0%"></div>
+    
+          <!-- Prediction Results Card -->
+          <div id="result" class="w-full lg:w-1/2 bg-white shadow-md rounded-lg p-6  lg:mt-0 hidden relative">
+            <h3 class="text-xl font-semibold p-4">Prediction Results:</h3>
+            <!-- Close Button -->
+            <button id="close-btn" class="text-red-500 font-bold absolute top-4 right-4 text-xl">×</button>
+            <div class="flex flex-col items-center">
+              <img id="result-image" src="" alt="Result Image" class="object-cover rounded-lg mb-4" style="max-width: 250px; max-height: 250px" />
+              <p id="class-name" class="text-lg font-semibold">Class: <span>Loading...</span></p>
+              <div class="mb-4">
+                <h4 class="text-lg font-semibold">Prediction Accuracy:</h4>
+                <div class="relative pt-1">
+                  <div class="flex mb-2 items-center justify-between">
+                    <span id="accuracy-percentage" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600 bg-teal-200">0%</span>
+                  </div>
+                  <div class="w-full bg-teal-200 rounded-full">
+                    <div id="accuracy-bar" class="bg-teal-500 text-xs leading-none py-1 text-center text-white rounded-full" style="width: 0%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-      </div>
-
-    </main>  
-
+    </main>
+    <style>
+      /* Flex layout for side-by-side display */
+      .container-image {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+    
+      /* Style for the form and results card */
+      form, #result {
+        flex: 1 1 45%;
+      }
+    
+      /* Make the cards stack on smaller screens */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+    
+        form, #result {
+          flex: 1 1 100%;
+        }
+      }
+    </style>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const dropzone = document.getElementById("dropzone");
@@ -543,7 +566,6 @@
   </footer> 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/reviews.js"></script>
     <script src="js/courses.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>

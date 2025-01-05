@@ -113,11 +113,11 @@ model = load_model('model/model-multi.h5')
 
 # Class mapping
 class_mapping = {
-    0: 'No_DR',
-    1: 'Mild',
-    2: 'Moderate',
-    3: 'Severe',
-    4: 'Proliferate_DR'
+    0: 'Mild',
+    1: 'Moderate',
+    2: 'No DR',
+    3: 'Proliferate',
+    4: 'Severe'
 }
 
 def allowed_file(filename):

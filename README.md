@@ -1,4 +1,4 @@
-# Retinascope - Klasifikasi Diabetic Retinopathy
+# Retinascope - Deteksi Diabetic Retinopathy
 
 **Retinascope** adalah aplikasi berbasis web yang membantu tenaga medis dalam melakukan diagnosis Diabetic Retinopathy (DR) secara cepat dan akurat menggunakan gambar fundus. Aplikasi ini menggunakan model **MobileNet** untuk mengklasifikasikan gambar fundus ke dalam 5 kelas berdasarkan tingkat keparahan Diabetic Retinopathy, dengan akurasi mencapai **75%**.
 
@@ -33,5 +33,7 @@ Antarmuka pengguna aplikasi **Retinascope** dirancang sederhana dan mudah diguna
 
 ### Screenshot Antarmuka Web
 
-![Halaman Upload](https://github.com/restudev/retinascope/blob/bef4db3383cc8f36e59bdfe8aa4db62df7855782/static/img/upload-ui.png)
+![Halaman Upload dan Prediksi](https://github.com/restudev/retinascope/blob/d6205d08bf7e7e3f408fd625a46a5cf29bdc8e9f/static/img/predict-page.png)
+
+![Halaman Dokumentasi](https://github.com/restudev/retinascope/blob/d6205d08bf7e7e3f408fd625a46a5cf29bdc8e9f/static/img/predict-page.png)
 

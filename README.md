@@ -21,12 +21,6 @@ Model yang digunakan dalam proyek ini adalah **MobileNet**, yang terkenal karena
 - **Model**: MobileNet
 - **Akurasi**: 75% pada set pengujian
 
-## Fitur
-
-- **Klasifikasi DR**: Aplikasi ini dapat mengklasifikasikan gambar fundus ke dalam 5 kelas berdasarkan tingkat keparahan Diabetic Retinopathy.
-- **Penggunaan yang Mudah**: Pengguna hanya perlu mengunggah gambar fundus dan aplikasi akan memberikan prediksi secara otomatis.
-- **Cepat dan Akurat**: Proses pengolahan gambar sangat cepat, memungkinkan diagnosis yang lebih cepat.
-
 ## Antarmuka Web
 
 Antarmuka pengguna aplikasi **Retinascope** dirancang sederhana dan mudah digunakan. Tenaga medis hanya perlu mengunggah gambar fundus mata, dan aplikasi akan secara otomatis memproses gambar tersebut dan memberikan hasil klasifikasi mengenai tingkat keparahan Diabetic Retinopathy. Proses ini dilakukan dengan cepat dan tidak memerlukan keahlian teknis, memungkinkan tenaga medis untuk mendapatkan diagnosis lebih cepat.
@@ -34,8 +28,10 @@ Antarmuka pengguna aplikasi **Retinascope** dirancang sederhana dan mudah diguna
 ### Screenshot Antarmuka Web
 
 ![Halaman Upload dan Prediksi](https://github.com/restudev/retinascope/blob/d6205d08bf7e7e3f408fd625a46a5cf29bdc8e9f/static/img/predict-page.png)
+*Halaman Upload dan Prediksi: Antarmuka untuk mengunggah gambar dan memulai prediksi.*
 
 ![Halaman Dokumentasi](https://github.com/restudev/retinascope/blob/e03bc181e1ed054588eaf2d74d2f2aac67ab71d4/static/img/doc-ui.png)
+*Halaman Dokumentasi: Tampilan antarmuka untuk melihat dokumentasi dataset.* 
 
 ![Halaman Visualisasi](https://github.com/restudev/retinascope/blob/3f2f529465e0a8e91d5a6af81c3d308e1638e4a8/static/img/visualization-ui.png)
-
+*Halaman Visualisasi: Tampilan antarmuka untuk melihat visualisasi hasil analisis.*

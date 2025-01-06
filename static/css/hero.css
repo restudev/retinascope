@@ -63,7 +63,9 @@
 .hero {
   position: relative;
   padding-top: 160px;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 95%) 50%, color-mix(in srgb, var(--accent-color), transparent 98%) 25%, transparent 50%);
+  background: linear-gradient(135deg, 
+  color-mix(in srgb, #6A11CB, transparent 95%) 50%, 
+  color-mix(in srgb, #6A11CB, transparent 98%) 25%, transparent 50%);
 }
 
 .hero::before {
@@ -90,7 +92,7 @@
 }
 
 .hero .hero-content h1 .accent-text {
-  color: var(--accent-color);
+  color: #6a11cb;
 }
 
 @media (max-width: 992px) {
@@ -118,9 +120,8 @@
   display: inline-flex;
   align-items: center;
   padding: 0.5rem 1rem;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
-  border-radius: 50px;
-  color: var(--accent-color);
+  background-color: color-mix(in srgb, #6a11cb, transparent 92%);  border-radius: 50px;
+  color: #6a11cb;
   font-weight: 500;
 }
 
@@ -129,7 +130,7 @@
 }
 
 .hero .btn-primary {
-  background-color: var(--accent-color);
+  background: linear-gradient(111.41deg, #ff0844 24.85%, #ff8b67 95.39%);
   border-color: var(--accent-color);
   color: var(--contrast-color);
   padding: 0.75rem 2.5rem;
@@ -137,6 +138,7 @@
   font-weight: 500;
   transition: all 0.3s ease;
 }
+
 
 .hero .btn-primary:hover {
   background-color: color-mix(in srgb, var(--accent-color), black 20%);
@@ -202,7 +204,7 @@
 }
 
 .hero .customers-badge .avatar.more {
-  background-color: var(--accent-color);
+  background-color: #6a11cb;
   color: var(--contrast-color);
   display: flex;
   align-items: center;

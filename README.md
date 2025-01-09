@@ -27,7 +27,7 @@ Antarmuka pengguna aplikasi **Retinascope** dirancang sederhana dan mudah diguna
 
 ### Screenshot Antarmuka Web
 
-![Halaman Upload dan Prediksi](https://github.com/restudev/retinascope/blob/d6205d08bf7e7e3f408fd625a46a5cf29bdc8e9f/static/img/predict-page.png)
+![Halaman Upload dan Prediksi](https://github.com/restudev/retinascope/blob/54ed41a4f079d5e60b7cb543895bbfe86ee14c22/static/img/predict-page.png)
 *Halaman Upload dan Prediksi*
 
 ![Halaman Dokumentasi](https://github.com/restudev/retinascope/blob/e03bc181e1ed054588eaf2d74d2f2aac67ab71d4/static/img/doc-ui.png)

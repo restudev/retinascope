@@ -103,7 +103,7 @@ def preprocess_image(file_obj):
 app.config['SECRET_KEY'] = secrets.token_hex(16)
 app.config['UPLOAD_FOLDER'] = 'static/uploads/'
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg'}
-app.config['MAX_CONTENT_LENGTH'] = 300 * 1024 * 1024  # 300MB
+app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024  
 
 # CSRF protection
 csrf = CSRFProtect(app)
@@ -132,7 +132,7 @@ def index():
 def documentation():
     try:
         # Read the Excel file using pandas
-        EXCEL_FILE_PATH = 'model/dataset.xlsx'  # Make sure this path is correct
+        EXCEL_FILE_PATH = 'model/dataset.xlsx'
         df = pd.read_excel(EXCEL_FILE_PATH)
         data = df.to_dict(orient='records')
         return render_template('documentation.html', data=data)

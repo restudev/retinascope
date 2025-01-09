@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/hero.css') }}"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/rekomendasi.css') }}"/>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon"/>
@@ -41,6 +42,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+
+  
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
@@ -74,372 +77,124 @@
     </header>
   
     <!-- Upload section start -->
-    <main class="container">
-      <div class="container-image mx-auto p-4">
-        <form method="POST" action="{{ url_for('upload_file') }}" enctype="multipart/form-data" id="form">
-          <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-          <div class="bg-white shadow-md rounded-lg p-6">
-            <h2 class="text-2xl font-bold mb-4">Image Upload</h2>
-            <p class="text-gray-600 mb-4">
-              Drag and drop your images here or click to browse. Maximum 1 image, each up to 10 MB.
-            </p>
-    
-            <!-- Drag-and-drop area -->
-            <div id="dropzone" class="border-2 border-dashed border-gray-300 rounded-lg p-6 mb-4 flex flex-col items-center justify-center">
-              <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2"></i>
-              <p class="text-gray-600">
-                Drag your images here or click to upload
-              </p>
-              <input type="file" id="fileInput" name="images[]" accept=".jpg,.jpeg,.png,.svg" class="hidden"/>
-            </div>
-    
-            <!-- Reference images -->
-            <h3 class="text-lg font-semibold mb-2">Or click from reference images:</h3>
-            <div id="reference-images" class="flex flex-wrap gap-2 mb-4">
-              <div class="reference-image relative w-20 h-20 cursor-pointer" data-image-url="{{ url_for('static', filename='img/image_noDR.png') }}">
-                <img src="{{ url_for('static', filename='img/image_noDR.png') }}" alt="Ref1" class="object-cover rounded-lg w-full h-full"/>
-              </div>
-              <div class="reference-image relative w-20 h-20 cursor-pointer" data-image-url="{{ url_for('static', filename='img/image_mild.png') }}">
-                <img src="{{ url_for('static', filename='img/image_mild.png') }}" alt="Ref2" class="object-cover rounded-lg w-full h-full"/>
-              </div>
-              <div class="reference-image relative w-20 h-20 cursor-pointer" data-image-url="{{ url_for('static', filename='img/image_moderate.png') }}">
-                <img src="{{ url_for('static', filename='img/image_moderate.png') }}" alt="Ref3" class="object-cover rounded-lg w-full h-full"/>
-              </div>
-              <div class="reference-image relative w-20 h-20 cursor-pointer" data-image-url="{{ url_for('static', filename='img/image_severe.png') }}">
-                <img src="{{ url_for('static', filename='img/image_severe.png') }}" alt="Ref5" class="object-cover rounded-lg w-full h-full"/>
-              </div>
-              <div class="reference-image relative w-20 h-20 cursor-pointer" data-image-url="{{ url_for('static', filename='img/image_proliferate.png') }}">
-                <img src="{{ url_for('static', filename='img/image_proliferate.png') }}" alt="Ref4" class="object-cover rounded-lg w-full h-full"/>
-              </div>
-            </div>
-    
-            <!-- Preview area -->
-            <p id="preview-text" class="text-gray-400 mb-4" style="display: none">
-              Preview your selected images:
-            </p>
-            <div id="image-preview" class="flex flex-wrap gap-2 mb-4"></div>
-    
-            <div class="flex justify-end mt-4 p-2">
-              <!-- Cancel Button -->
-              <button type="button" id="cancelButton" class="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg mr-2 hover:bg-gray-300 focus:ring-2 focus:ring-gray-400 focus:outline-none" aria-label="Cancel and reset the form">Cancel</button>
-              <!-- Upload Button -->
-              <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-400 focus:outline-none" aria-label="Submit and upload the file">
-                Upload
-              </button>
-            </div>
+<main class="container">
+  <div class="container-image mx-auto p-4">
+    <!-- Upload Form Section -->
+    <form method="POST" action="{{ url_for('upload_file') }}" enctype="multipart/form-data" id="form">
+      <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-2xl font-bold mb-4">Image Upload</h2>
+        <p class="text-gray-600 mb-4">
+          Drag and drop your images here or click to browse. Maximum 1 image, each up to 10 MB.
+        </p>
+
+        <!-- Drag-and-drop area -->
+        <div id="dropzone" class="border-2 border-dashed border-gray-300 rounded-lg p-6 mb-4 flex flex-col items-center justify-center">
+          <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2"></i>
+          <p class="text-gray-600">
+            Drag your images here or click to upload
+          </p>
+          <input type="file" id="fileInput" name="images[]" accept=".jpg,.jpeg,.png,.svg" class="hidden"/>
+        </div>
+
+        <!-- Reference images -->
+        <h3 class="text-lg font-semibold mb-2">Or click from reference images:</h3>
+        <div id="reference-images" class="flex flex-wrap gap-2 mb-4">
+          <div class="reference-image relative w-20 h-20 cursor-pointer" data-image-url="{{ url_for('static', filename='img/image_noDR.png') }}">
+            <img src="{{ url_for('static', filename='img/image_noDR.png') }}" alt="Ref1" class="object-cover rounded-lg w-full h-full"/>
           </div>
-        </form>
-    
-          <!-- Prediction Results Card -->
-          <div id="result" class="w-full lg:w-1/2 bg-white shadow-md rounded-lg p-6  lg:mt-0 hidden relative">
-            <h3 class="text-xl font-semibold p-4">Prediction Results:</h3>
-            <!-- Close Button -->
-            <button id="close-btn" class="text-red-500 font-bold absolute top-4 right-4 text-xl">×</button>
-            <div class="flex flex-col items-center">
-              <img id="result-image" src="" alt="Result Image" class="object-cover rounded-lg mb-4" style="max-width: 250px; max-height: 250px" />
-              <p id="class-name" class="text-lg font-semibold">Class: <span>Loading...</span></p>
-              <div class="mb-4">
-                <h4 class="text-lg font-semibold">Prediction Accuracy:</h4>
-                <div class="relative pt-1">
-                  <div class="flex mb-2 items-center justify-between">
-                    <span id="accuracy-percentage" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600 bg-teal-200">0%</span>
-                  </div>
-                  <div class="w-full bg-teal-200 rounded-full">
-                    <div id="accuracy-bar" class="bg-teal-500 text-xs leading-none py-1 text-center text-white rounded-full" style="width: 0%"></div>
-                  </div>
-                </div>
-              </div>
+          <div class="reference-image relative w-20 h-20 cursor-pointer" data-image-url="{{ url_for('static', filename='img/image_mild.png') }}">
+            <img src="{{ url_for('static', filename='img/image_mild.png') }}" alt="Ref2" class="object-cover rounded-lg w-full h-full"/>
+          </div>
+          <div class="reference-image relative w-20 h-20 cursor-pointer" data-image-url="{{ url_for('static', filename='img/image_moderate.png') }}">
+            <img src="{{ url_for('static', filename='img/image_moderate.png') }}" alt="Ref3" class="object-cover rounded-lg w-full h-full"/>
+          </div>
+          <div class="reference-image relative w-20 h-20 cursor-pointer" data-image-url="{{ url_for('static', filename='img/image_severe.png') }}">
+            <img src="{{ url_for('static', filename='img/image_severe.png') }}" alt="Ref5" class="object-cover rounded-lg w-full h-full"/>
+          </div>
+          <div class="reference-image relative w-20 h-20 cursor-pointer" data-image-url="{{ url_for('static', filename='img/image_proliferate.png') }}">
+            <img src="{{ url_for('static', filename='img/image_proliferate.png') }}" alt="Ref4" class="object-cover rounded-lg w-full h-full"/>
+          </div>
+        </div>
+
+        <!-- Preview area -->
+        <p id="preview-text" class="text-gray-400 mb-4" style="display: none">
+          Preview your selected images:
+        </p>
+        <div id="image-preview" class="flex flex-wrap gap-2 mb-4"></div>
+
+        <div class="flex justify-end mt-4 p-2">
+          <!-- Cancel Button -->
+          <button type="button" id="cancelButton" class="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg mr-2 hover:bg-gray-300 focus:ring-2 focus:ring-gray-400 focus:outline-none" aria-label="Cancel and reset the form">Cancel</button>
+          <!-- Upload Button -->
+          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-400 focus:outline-none" aria-label="Submit and upload the file">
+            Upload
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Prediction Results Card -->
+    <div id="result" class="w-full bg-white shadow-md rounded-lg p-6 mb-4 hidden">
+      <h3 class="text-xl font-semibold p-4">Prediction Result:</h3>
+      <button id="close-btn" class="text-red-500 font-bold absolute top-4 right-4 text-xl">×</button>
+      <div class="flex flex-col items-center">
+        <img id="result-image" src="" alt="Result Image" class="object-cover rounded-lg mb-4" style="max-width: 250px; max-height: 250px" />
+        <p id="class-name" class="text-lg font-semibold">Severity Level: <span>Loading...</span></p>
+        <div class="mb-4">
+          <h4 class="text-lg font-semibold">Prediction Accuracy:</h4>
+          <div class="relative pt-1">
+            <div class="flex mb-2 items-center justify-between">
+              <span id="accuracy-percentage" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600 bg-teal-200">0%</span>
+            </div>
+            <div class="w-full bg-teal-200 rounded-full">
+              <div id="accuracy-bar" class="bg-teal-500 text-xs leading-none py-1 text-center text-white rounded-full" style="width: 0%"></div>
             </div>
           </div>
         </div>
       </div>
-    </main>
-    <style>
-      /* Flex layout for side-by-side display */
-      .container-image {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-    
-      /* Style for the form and results card */
-      form, #result {
-        flex: 1 1 45%;
-      }
-    
-      /* Make the cards stack on smaller screens */
-      @media (max-width: 768px) {
-        .container {
-          flex-direction: column;
-        }
-    
-        form, #result {
-          flex: 1 1 100%;
-        }
-      }
-    </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const dropzone = document.getElementById("dropzone");
-        const fileInput = document.getElementById("fileInput");
-        const previewText = document.getElementById("preview-text");
-        const imagePreview = document.getElementById("image-preview");
-        const cancelButton = document.getElementById("cancelButton");
-        const resultSection = document.getElementById("result");
-        const resultImage = document.getElementById("result-image");
-        const className = document.getElementById("class-name").querySelector("span");
-        const accuracyPercentage = document.getElementById("accuracy-percentage");
-        const accuracyBar = document.getElementById("accuracy-bar");
-        const referenceImages = document.querySelectorAll('.reference-image');
-        // Menangani klik pada tombol Close untuk menyembunyikan card hasil prediksi
-        const closeButton = document.getElementById("close-btn");
+    </div>
 
-        closeButton.addEventListener("click", function () {
-          resultSection.style.display = "none"; // Menyembunyikan card hasil prediksi
-        });
+    <!-- Updated Recommendations Card -->
+<div id="recommendations-card" class="recommendation-wrapper hidden transform transition-all duration-300 ease-in-out">
+  <div class="severity-header severity-moderate">
+      <div class="severity-icon">!!</div>
+      <span>Medical Recommendations</span>
+  </div>
+  <div class="content-section">
+      <div class="description-box">
+          <h5 class="font-medium text-gray-800 mb-2">Deskripsi Kondisi:</h5>
+          <p id="condition-description" class="text-gray-700">[Isi deskripsi kondisi]</p>
+      </div>
 
-        // Menangani perubahan pada input file (pemilihan file)
-        fileInput.addEventListener("change", handleFileSelect);
-    
-        // Menangani event dragover untuk drag-and-drop (seret dan lepas)
-        dropzone.addEventListener("dragover", (e) => {
-          e.preventDefault();
-          dropzone.classList.add("bg-gray-100");
-        });
-        dropzone.addEventListener("dragleave", () => {
-          dropzone.classList.remove("bg-gray-100");
-        });
-        dropzone.addEventListener("drop", (e) => {
-          e.preventDefault();
-          dropzone.classList.remove("bg-gray-100");
-          const files = e.dataTransfer.files;
-          handleFileSelect({ target: { files } });
-        });
-    
-        // Membolehkan klik pada dropzone untuk membuka dialog file input
-        dropzone.addEventListener("click", function () {
-          fileInput.click(); // Memicu event klik pada file input
-        });
-    
-        // Fungsi untuk menangani pemilihan file dan menampilkan preview (maksimal 1 gambar)
-        function handleFileSelect(e) {
-          const files = e.target.files || e.dataTransfer.files;
-          
-          // Menyembunyikan teks preview jika ada file yang dipilih
-          previewText.style.display = "block";
-          
-          // Menghapus preview yang ada sebelumnya (jika ada)
-          imagePreview.innerHTML = "";
-    
-          // Mengambil file pertama yang diupload (jika ada)
-          const file = files[0]; // hanya ambil file pertama
-          if (file && file.type.startsWith("image/")) { // Cek hanya untuk file gambar
-            const reader = new FileReader();
-            reader.onload = function (e) {
-              // Membuat elemen img untuk preview gambar
-              const img = document.createElement("img");
-              img.src = e.target.result;
-              img.alt = file.name;
-              img.classList.add(
-                "object-cover",
-                "rounded-lg",
-                "w-full",
-                "h-full",
-                "mb-2"
-              );
-    
-              // Membuat div untuk mengemas preview gambar
-              const previewDiv = document.createElement("div");
-              previewDiv.classList.add("relative", "w-20", "h-20");
-    
-              // Menambahkan gambar ke dalam div preview
-              previewDiv.appendChild(img);
-    
-              // Menambahkan teks nama file di bawah gambar
-              const fileNameText = document.createElement("p");
-              fileNameText.classList.add("text-sm", "text-center", "mt-2");
-              fileNameText.textContent = file.name;
-    
-              // Menambahkan teks nama file ke dalam div preview
-              previewDiv.appendChild(fileNameText);
-    
-              // Membuat tombol silang (×) untuk menghapus gambar
-              const deleteButton = document.createElement("button");
-              deleteButton.textContent = "×"; // Simbol silang
-              deleteButton.classList.add(
-                "absolute",
-                "top-0",
-                "right-0",
-                "bg-red-500",
-                "text-white",
-                "px-2",
-                "py-1",
-                "rounded-full",
-                "text-xs",
-                "font-bold",
-                "w-6",
-                "h-6",
-                "flex",
-                "items-center",
-                "justify-center"
-              );
-    
-              // Event listener untuk menghapus gambar
-              deleteButton.addEventListener("click", function () {
-                previewDiv.remove(); // Menghapus preview gambar
-                if (imagePreview.children.length === 0) {
-                  previewText.style.display = "none"; // Menyembunyikan teks preview jika tidak ada gambar
-                }
-              });
-    
-              // Menambahkan tombol silang ke dalam div preview
-              previewDiv.appendChild(deleteButton);
-    
-              // Menambahkan div preview ke dalam container
-              imagePreview.appendChild(previewDiv);
-            };
-    
-            // Membaca file gambar
-            reader.readAsDataURL(file);
-          }
-        }
-    
-        // Menangani klik pada tombol cancel untuk reset form dan preview
-        cancelButton.addEventListener("click", function () {
-          fileInput.value = ""; // Mengosongkan input file
-          imagePreview.innerHTML = ""; // Menghapus preview gambar
-          previewText.style.display = "none"; // Menyembunyikan teks preview
-          resultSection.style.display = "none"; // Menyembunyikan card hasil prediksi
-        });
-    
-        // Fungsi untuk menangani hasil prediksi
-        function handlePredictionResult(data, displayImageSrc) {
-          if (data.error) {
-            alert(data.error);
-            resultSection.style.display = "none";
-            return;
-          }
-    
-          const prediction = data.predictions[0];
-          
-          // Update UI dengan hasil prediksi
-          resultImage.src = displayImageSrc || prediction.image_path;
-          className.textContent = prediction.class_name;
-          
-          const accuracyPercent = (prediction.prediction_probability * 100).toFixed(1);
-          accuracyPercentage.textContent = `${accuracyPercent}%`;
-          accuracyBar.style.width = `${accuracyPercent}%`;
-          
-          resultSection.style.display = "block";
-        }
-    
-        // Menambahkan event listener untuk gambar referensi
-        referenceImages.forEach(refImg => {
-          refImg.addEventListener('click', function() {
-            // Ambil URL gambar dari atribut data
-            const imageUrl = this.getAttribute('data-image-url');
-            const imgElement = this.querySelector('img');
-            
-            // Tampilkan status loading
-            className.textContent = "Processing...";
-            resultSection.style.display = "block";
-            
-            // Buat FormData dan tambahkan CSRF token
-            const formData = new FormData();
-            const csrfToken = document.querySelector('input[name="_token"]').value;
-            formData.append('_token', csrfToken);
-            
-            // Ambil gambar dan konversi menjadi objek File
-            fetch(imageUrl)
-              .then(response => response.blob())
-              .then(blob => {
-                // Buat objek File dari blob
-                const imageFile = new File([blob], "reference_image.png", { type: "image/png" });
-                formData.append('images[]', imageFile);
-                
-                // Kirim ke server untuk prediksi
-                return fetch('/upload', {
-                  method: 'POST',
-                  body: formData,
-                  headers: {
-                    'X-CSRF-TOKEN': csrfToken
-                  }
-                });
-              })
-              .then(response => response.json())
-              .then(data => handlePredictionResult(data, imageUrl))
-              .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred while processing the image. Please try again.');
-                resultSection.style.display = "none";
-              });
-          });
-        });
-    
-        // Handler untuk pengiriman form
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          
-          // Cek apakah ada file yang dipilih
-          const hasFileInput = fileInput.files && fileInput.files.length > 0;
-          const hasPreviewImages = imagePreview.children.length > 0;
-          
-          // Jika tidak ada gambar yang dipilih, tampilkan alert
-          if (!hasFileInput && !hasPreviewImages) {
-            alert("Please select an image first");
-            return;
-          }
-    
-          const formData = new FormData();
-          const csrfToken = document.querySelector('input[name="_token"]').value;
-          formData.append('_token', csrfToken);
-    
-          if (hasFileInput) {
-            // Jika ada file yang dipilih dari file input, hanya ambil file pertama
-            formData.append('images[]', fileInput.files[0]);
-          } else if (hasPreviewImages) {
-            // Jika ada gambar di preview, ambil gambar tersebut
-            const previewImg = imagePreview.querySelector('img');
-            if (previewImg) {
-              // Ambil gambar preview dan kirimkan ke server
-              fetch(previewImg.src)
-                .then(response => response.blob())
-                .then(blob => {
-                  formData.append('images[]', new File([blob], "preview_image.png", { type: "image/png" }));
-                  submitForm(formData); 
-                })
-                .catch(error => alert("Failed to process the preview image: " + error.message));
-              return; // Hentikan proses jika sudah ada gambar di preview
-            }
-          }
-    
-          // Kirim form tanpa gambar jika tidak ada gambar yang dipilih
-          submitForm(formData);
-        });
-    
-        // Fungsi untuk mengirimkan data form ke server
-        function submitForm(formData) {
-          className.textContent = "Processing...";
-          resultSection.style.display = "block";
-          
-          return fetch('/upload', {
-            method: 'POST',
-            body: formData,
-            headers: {
-              'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value
-            }
-          })
-          .then(response => response.json())
-          .then(data => handlePredictionResult(data))
-          .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred during the process.');
-            resultSection.style.display = "none";
-          });
-        }
-      });
-    </script>
+      <div class="specialist-section">
+          <div class="doctor-icon">👩‍⚕️</div>
+          <div>
+              <strong>Dokter yang Direkomendasikan:</strong><br>
+              <p id="recommended-doctor" class="text-gray-700">[Nama dokter]</p>
+          </div>
+      </div>
+
+      <h3 style="margin: 0 0 16px 0;">Langkah Selanjutnya:</h3>
+      <ul id="next-steps" class="steps-list">
+          <li>
+              <div class="step-number">1</div>
+              <span>[Langkah pertama]</span>
+          </li>
+          <li>
+              <div class="step-number">2</div>
+              <span>[Langkah kedua]</span>
+          </li>
+      </ul>
+  </div>
+</div>
+
+  </div>
+</main>
+
     <!-- upload section end -->
+
+    <!-- footer section start -->
     <footer class="footer">
       <div class="container">
           <div class="footer_wrapper d-sm-flex flex-wrap flex-lg-nowrap justify-content-lg-between">
@@ -540,7 +295,386 @@
               <p class="footer_secondary-copyright">Copyright @ <span id="currentYear"></span> retinascope</p>
           </div>
       </div>
-  </footer> 
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // ==========================================
+      // Referensi Element DOM
+      // Mengumpulkan semua referensi element HTML yang dibutuhkan
+      // ==========================================
+      const elements = {
+        dropzone: document.getElementById("dropzone"),
+        fileInput: document.getElementById("fileInput"),
+        previewText: document.getElementById("preview-text"),
+        imagePreview: document.getElementById("image-preview"),
+        cancelButton: document.getElementById("cancelButton"),
+        resultSection: document.getElementById("result"),
+        resultImage: document.getElementById("result-image"),
+        className: document
+          .getElementById("class-name")
+          .querySelector("span"),
+        accuracyPercentage: document.getElementById("accuracy-percentage"),
+        accuracyBar: document.getElementById("accuracy-bar"),
+        referenceImages: document.querySelectorAll(".reference-image"),
+        closeButton: document.getElementById("close-btn"),
+        recommendationsCard: document.getElementById("recommendations-card"),
+      };
+
+      // ==========================================
+      // Pengaturan Event Listener
+      // Menginisialisasi semua event listener yang diperlukan
+      // ==========================================
+      function setupEventListeners() {
+        // Event untuk input file dan area drop
+        elements.fileInput.addEventListener("change", handleFileSelect);
+        elements.dropzone.addEventListener("dragover", handleDragOver);
+        elements.dropzone.addEventListener("dragleave", handleDragLeave);
+        elements.dropzone.addEventListener("drop", handleDrop);
+        elements.dropzone.addEventListener("click", () =>
+          elements.fileInput.click()
+        );
+
+        // Event untuk tombol-tombol
+        elements.cancelButton.addEventListener("click", resetForm);
+        elements.closeButton.addEventListener("click", hideResults);
+
+        // Event untuk gambar referensi
+        elements.referenceImages.forEach(setupReferenceImageListener);
+
+        // Event untuk pengiriman form
+        form.addEventListener("submit", handleFormSubmit);
+      }
+
+      // ==========================================
+      // Fungsi-fungsi Penanganan File
+      // Menangani drag-drop dan pemilihan file
+      // ==========================================
+      function handleDragOver(e) {
+        e.preventDefault();
+        elements.dropzone.classList.add("bg-gray-100");
+      }
+
+      function handleDragLeave() {
+        elements.dropzone.classList.remove("bg-gray-100");
+      }
+
+      function handleDrop(e) {
+        e.preventDefault();
+        elements.dropzone.classList.remove("bg-gray-100");
+        const files = e.dataTransfer.files;
+        handleFileSelect({ target: { files } });
+      }
+
+      // Menangani pemilihan file, baik melalui input atau drag-drop
+      function handleFileSelect(e) {
+        const files = e.target.files || e.dataTransfer.files;
+        elements.previewText.style.display = "block";
+        elements.imagePreview.innerHTML = "";
+
+        const file = files[0];
+        if (file && file.type.startsWith("image/")) {
+          createImagePreview(file);
+        }
+      }
+
+      // ==========================================
+      // Fungsi-fungsi Pembuatan Preview
+      // Membuat dan menampilkan preview gambar
+      // ==========================================
+      function createImagePreview(file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const previewDiv = document.createElement("div");
+          previewDiv.classList.add("relative", "w-20", "h-20");
+
+          // Membuat dan mengatur gambar preview
+          const img = createPreviewImage(e.target.result, file.name);
+          previewDiv.appendChild(img);
+
+          // Menambahkan nama file
+          const fileNameText = createFileNameElement(file.name);
+          previewDiv.appendChild(fileNameText);
+
+          // Menambahkan tombol hapus
+          const deleteButton = createDeleteButton(previewDiv);
+          previewDiv.appendChild(deleteButton);
+
+          elements.imagePreview.appendChild(previewDiv);
+        };
+        reader.readAsDataURL(file);
+      }
+
+      // Membuat element gambar preview
+      function createPreviewImage(src, alt) {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = alt;
+        img.classList.add(
+          "object-cover",
+          "rounded-lg",
+          "w-full",
+          "h-full",
+          "mb-2"
+        );
+        return img;
+      }
+
+      // Membuat element untuk menampilkan nama file
+      function createFileNameElement(fileName) {
+        const fileNameText = document.createElement("p");
+        fileNameText.classList.add("text-sm", "text-center", "mt-2");
+        fileNameText.textContent = fileName;
+        return fileNameText;
+      }
+
+      // Membuat tombol hapus untuk preview
+      function createDeleteButton(previewDiv) {
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "×";
+        deleteButton.classList.add(
+          "absolute",
+          "top-0",
+          "right-0",
+          "bg-red-500",
+          "text-white",
+          "px-2",
+          "py-1",
+          "rounded-full",
+          "text-xs",
+          "font-bold",
+          "w-6",
+          "h-6",
+          "flex",
+          "items-center",
+          "justify-center"
+        );
+        deleteButton.addEventListener("click", () => {
+          previewDiv.remove();
+          if (elements.imagePreview.children.length === 0) {
+            elements.previewText.style.display = "none";
+          }
+        });
+        return deleteButton;
+      }
+
+      // ==========================================
+      // Fungsi-fungsi Penanganan Form
+      // Menangani pengiriman dan validasi form
+      // ==========================================
+      function handleFormSubmit(e) {
+        e.preventDefault();
+
+        // Memeriksa keberadaan file
+        const hasFileInput =
+          elements.fileInput.files && elements.fileInput.files.length > 0;
+        const hasPreviewImages = elements.imagePreview.children.length > 0;
+
+        if (!hasFileInput && !hasPreviewImages) {
+          alert("Silakan pilih gambar terlebih dahulu");
+          return;
+        }
+
+        // Menyiapkan data form
+        const formData = new FormData();
+        const csrfToken = document.querySelector(
+          'input[name="_token"]'
+        ).value;
+        formData.append("_token", csrfToken);
+
+        if (hasFileInput) {
+          formData.append("images[]", elements.fileInput.files[0]);
+          submitForm(formData);
+        } else if (hasPreviewImages) {
+          processPreviewImage(formData);
+        }
+      }
+
+      // Memproses gambar preview sebelum dikirim
+      async function processPreviewImage(formData) {
+        const previewImg = elements.imagePreview.querySelector("img");
+        if (previewImg) {
+          try {
+            const response = await fetch(previewImg.src);
+            const blob = await response.blob();
+            formData.append(
+              "images[]",
+              new File([blob], "preview_image.png", { type: "image/png" })
+            );
+            await submitForm(formData);
+          } catch (error) {
+            alert("Gagal memproses gambar preview: " + error.message);
+          }
+        }
+      }
+
+      // ==========================================
+      // Fungsi-fungsi Penanganan Hasil
+      // Menangani dan menampilkan hasil prediksi
+      // ==========================================
+      function handlePredictionResult(data, displayImageSrc) {
+        if (data.error) {
+          alert(data.error);
+          elements.resultSection.style.display = "none";
+          return;
+        }
+
+        const prediction = data.predictions[0];
+        updateResultUI(prediction, displayImageSrc);
+        updateRecommendations(prediction);
+      }
+
+      // Memperbarui UI dengan hasil prediksi
+      function updateResultUI(prediction, displayImageSrc) {
+        elements.resultImage.src = displayImageSrc || prediction.image_path;
+        elements.className.textContent = prediction.class_name;
+
+        const accuracyPercent = (
+          prediction.prediction_probability * 100
+        ).toFixed(1);
+        elements.accuracyPercentage.textContent = `${accuracyPercent}%`;
+        elements.accuracyBar.style.width = `${accuracyPercent}%`;
+      }
+
+      // Memperbarui rekomendasi berdasarkan hasil prediksi
+      function updateRecommendations(prediction) {
+        if (prediction.recommendations) {
+          document.getElementById("condition-description").textContent =
+            prediction.recommendations.description;
+          document.getElementById("recommended-doctor").textContent =
+            prediction.recommendations.specialist;
+
+          updateNextSteps(prediction.recommendations.next_steps);
+          showRecommendationsWithAnimation();
+        } else {
+          document
+            .getElementById("recommendation-content")
+            .classList.add("hidden");
+        }
+        elements.resultSection.classList.remove("hidden");
+        elements.resultSection.style.display = "block";
+      }
+
+      // Memperbarui langkah-langkah selanjutnya
+      function updateNextSteps(steps) {
+        const nextStepsList = document.getElementById("next-steps");
+        nextStepsList.innerHTML = "";
+        steps.forEach((step) => {
+          const li = document.createElement("li");
+          li.textContent = step;
+          li.classList.add("mb-2");
+          nextStepsList.appendChild(li);
+        });
+      }
+
+      // Menampilkan rekomendasi dengan animasi
+      function showRecommendationsWithAnimation() {
+        elements.recommendationsCard.classList.remove("hidden");
+        setTimeout(() => {
+          elements.recommendationsCard.classList.add(
+            "translate-y-0",
+            "opacity-100"
+          );
+          elements.recommendationsCard.classList.remove(
+            "translate-y-4",
+            "opacity-0"
+          );
+        }, 100);
+      }
+
+      // ==========================================
+      // Fungsi-fungsi Komunikasi API
+      // Menangani komunikasi dengan server
+      // ==========================================
+      async function submitForm(formData) {
+        elements.className.textContent = "Sedang Memproses...";
+        elements.resultSection.style.display = "block";
+
+        try {
+          const response = await fetch("/upload", {
+            method: "POST",
+            body: formData,
+            headers: {
+              "X-CSRF-TOKEN": document.querySelector('input[name="_token"]')
+                .value,
+            },
+          });
+          const data = await response.json();
+          handlePredictionResult(data);
+        } catch (error) {
+          console.error("Error:", error);
+          alert("Terjadi kesalahan selama proses.");
+          elements.resultSection.style.display = "none";
+        }
+      }
+
+      // ==========================================
+      // Fungsi-fungsi Penanganan Gambar Referensi
+      // Menangani interaksi dengan gambar referensi
+      // ==========================================
+      function setupReferenceImageListener(refImg) {
+        refImg.addEventListener("click", async function () {
+          const imageUrl = this.getAttribute("data-image-url");
+
+          elements.className.textContent = "Sedang Memproses...";
+          elements.resultSection.style.display = "block";
+
+          try {
+            const formData = new FormData();
+            const csrfToken = document.querySelector(
+              'input[name="_token"]'
+            ).value;
+            formData.append("_token", csrfToken);
+
+            const response = await fetch(imageUrl);
+            const blob = await response.blob();
+            const imageFile = new File([blob], "reference_image.png", {
+              type: "image/png",
+            });
+            formData.append("images[]", imageFile);
+
+            const predictionResponse = await fetch("/upload", {
+              method: "POST",
+              body: formData,
+              headers: {
+                "X-CSRF-TOKEN": csrfToken,
+              },
+            });
+            const data = await predictionResponse.json();
+            handlePredictionResult(data, imageUrl);
+          } catch (error) {
+            console.error("Error:", error);
+            alert(
+              "Terjadi kesalahan saat memproses gambar. Silakan coba lagi."
+            );
+            elements.resultSection.style.display = "none";
+          }
+        });
+      }
+
+      // ==========================================
+      // Fungsi-fungsi Utilitas
+      // Fungsi-fungsi Tambahan
+      // ==========================================
+
+      // Mereset form ke keadaan awal
+      function resetForm() {
+        elements.fileInput.value = "";
+        elements.imagePreview.innerHTML = "";
+        elements.previewText.style.display = "none";
+        elements.resultSection.style.display = "none";
+        elements.recommendationsCard.classList.add("hidden");
+      }
+
+      // Menyembunyikan hasil prediksi
+      function hideResults() {
+        elements.resultSection.style.display = "none";
+        elements.recommendationsCard.classList.add("hidden");
+      }
+
+      // Inisialisasi aplikasi
+      setupEventListeners();
+    });
+  </script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="js/common.js"></script>
     <script src="js/courses.js"></script>
